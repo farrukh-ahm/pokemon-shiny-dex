@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Varela+Round&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+:root{
+    --body-font: 'Varela Round', sans-serif;
+    --header-font: 'Dancing Script', cursive;
+    --title: 'Caveat', cursive;
+    --body-color: #242129;
+    --banner-color: #B54936;
+    --header-color: #fcf7ff;
+    --button-color: #fcf7ff;
+    --text-color: #d3fbd8;
+}
+
+body{
+    background-color: black;
+    overflow-x: hidden;
+}
+
+.flex-wrapper{
+    display: flex;
+    gap: var(--gap, 1rem);
+    align-items: center;
+    
+}
+
+h1,h2,h3,h4{
+    text-transform: uppercase;
+}
+
+
+
+#header{
+    inline-size: 100%;
+    block-size: 6.25rem;
+    background-color: var(--banner-color);
+    padding-inline: 2rem;
+    padding-block: min(5vh, 20px);
+    position: relative;
+}
+
+h1{
+    font-family: var(--header-font);
+    color: var(--header-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#page-icon{
+    inline-size: 3.75rem;
+    block-size: 3.75rem;
+    border-radius: 50%;
+    border: 1px solid var(--body-color);
+    float: left;
+    position: relative;
+    animation: glow 5s linear alternate infinite;
+    /* text-align: center; */
+}
+
+@keyframes glow{
+    0%{border-color: var(--body-color);}
+    20%{border-color: #6a548d;}
+    40%{border-color: #74aad6;}
+    60%{border-color: #90e9b5;}
+    80%{border-color: #dbf39b;}
+    100%{border-color: #f0cb86;}
+}
+
+#page-icon > img{
+    inline-size: 90%;
+    block-size: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-20%, -50%);
+    list-style: none;
+    --gap: 1em;
+    /* background-color: #6a548d; */
+}
+
+.nav > li a{
+    text-decoration: none;
+    letter-spacing: .15em;
+    font-family: var(--title);
+    color: var(--text-color);
+}
+
+#nav-toggle{
+    width: 2rem;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background-color: #90e9b5;
+    z-index: 9999;
+    display: none;
+}
+
+@media (max-width: 800px){
+    .nav{
+        position: absolute;
+        left: 50%;
+        top: 75%;
+        transform: translateX(-35%);
+
+    }
+}
+
+@media (max-width: 35rem){
+    .nav{
+        position: fixed;
+        inset: 0 0 0 100%;
+        transform: none;
+        flex-direction: column;
+        padding-block: min(20vh, 10rem);
+        padding-inline-start: 2rem;
+        align-items: flex-start;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(2px);
+        transition: all 0.5s ease-in-out;
+    }
+
+    #nav-toggle{
+        display: block;
+    }
+
+    .toggle{
+        inset: 0 0 0 30%;
+    }
+}
+
