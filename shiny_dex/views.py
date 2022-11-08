@@ -9,3 +9,9 @@ class HomePage(View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html')
+
+
+class Dex(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'dex.html')
