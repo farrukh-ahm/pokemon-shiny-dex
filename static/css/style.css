@@ -83,7 +83,15 @@ h1,h2,h3,h4{
     text-transform: uppercase;
 }
 
-
+.btn {
+    inline-size: 4rem;
+    block-size: 2rem;
+    background: none;
+    border: 1px solid var(--banner-color);
+    color: var(--button-color);
+    font-family: var(--header-font);
+    text-align: center;
+}
 
 #header{
     inline-size: 100%;
@@ -303,4 +311,35 @@ h2{
 .info{
     font-size: smaller;
     color: var(--info);
+}
+
+
+/* ---------- LOGIN/LOGOUT/SIGNUP PAGE ------------ */
+
+.grid-log{
+    grid-template-columns: repeat(1, 1fr);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-inline: 2rem;
+    background-color: pink;
+}
+
+.grid-log  p{
+    color: var(--header-color);
+}
+
+.grid-log  form {
+    color: var(--text-color);
+    background-color: #74aad6;
+}
+
+.custom-btn {
+    margin-block-start: 1rem;
+    margin-inline: auto;
+}
+
+@media (max-width: 650px){
+    .grid-log {inline-size: 80%;}
 }
