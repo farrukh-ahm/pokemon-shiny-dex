@@ -130,6 +130,8 @@ h2{
     block-size: 3.75rem;
     border-radius: 50%;
     border: 2px solid var(--body-color);
+    /* filter: drop-shadow(0 0 3px var(--banner-color)); */
+    box-shadow: 0 0 5px white, inset 0 0 3px white;
     float: left;
     position: relative;
     animation: glow 5s linear alternate infinite;
@@ -137,12 +139,30 @@ h2{
 }
 
 @keyframes glow{
-    0%{border-color: var(--body-color);}
-    20%{border-color: #6a548d;}
-    40%{border-color: #74aad6;}
-    60%{border-color: #90e9b5;}
-    80%{border-color: #dbf39b;}
-    100%{border-color: #f0cb86;}
+    0%{
+        border-color: var(--body-color);
+        box-shadow: 0 0 5px var(--body-color), inset 0 0 3px var(--body-color);
+    }
+    20%{
+        border-color: #6a548d;
+        box-shadow: 0 0 5px #6a548d, inset 0 0 3px #6a548d;
+    }
+    40%{
+        border-color: #74aad6;
+        box-shadow: 0 0 5px #74aad6, inset 0 0 3px #74aad6;
+    }
+    60%{
+        border-color: #90e9b5;
+        box-shadow: 0 0 5px #90e9b5, inset 0 0 3px #90e9b5;
+    }
+    80%{
+        border-color: #dbf39b;
+        box-shadow: 0 0 5px #dbf39b, inset 0 0 3px #dbf39b;
+    }
+    100%{
+        border-color: #f0cb86;
+        box-shadow: 0 0 5px #f0cb86, inset 0 0 3px #f0cb86;
+    }
 }
 
 #page-icon > img{
@@ -158,7 +178,7 @@ h2{
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translate(-20%, -50%);
+    transform: translate(-10%, -50%);
     list-style: none;
     --gap: 1em;
     /* background-color: #6a548d; */
@@ -202,7 +222,8 @@ h2{
         padding-inline-start: 2rem;
         align-items: flex-start;
         background-color: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(5px);
+        z-index: 99;
         transition: all 0.5s ease-in-out;
     }
 
