@@ -23,8 +23,9 @@
                 <li><a href="#">Admin</a></li>
                 <li><a href="{% url 'account_logout' %}">LogOut</a></li>
                 {%  elif user.is_authenticated %}
-                <li><a href="{% url 'dex' %}">Dex</a></li>
+                <li><a href="{% url 'dex' request.user %}">Dex</a></li>
                 <li><a href="#">Add/Edit</a></li>
+                <li><a href="{% url 'profile' request.user %}">Profile</a></li>
                 <li><a href="{% url 'account_logout' %}">LogOut</a></li>
                 {% else %}
                 <li><a href="{% url 'account_login' %}">Log In</a></li>

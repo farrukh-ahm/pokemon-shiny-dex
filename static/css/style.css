@@ -30,6 +30,7 @@ body{
     font-family: var(--body-font);
 }
 
+/* ----------------------------------- */
 /* ---------- FLEX BOX --------------- */
 .flex-wrapper{
     display: flex;
@@ -45,8 +46,8 @@ body{
     justify-content: center;
 }
 
-/* ------------------------------------------- */
 
+/* ------------------------------------------- */
 /* ---------- GRID BOX --------------- */
 .grid-wrapper{
     display: grid;
@@ -54,11 +55,6 @@ body{
     align-items: center;
     justify-content: center;
 }
-
-/* .grid-auto{
-    grid-auto-flow: column;
-    grid-auto-columns: auto;
-} */
 
 .grid-auto{
     grid-template-columns: repeat(1, 1fr);
@@ -78,19 +74,27 @@ body{
 }
 
 /* ------------------------------------------- */
+/* --------- GENERAL FORMATS ---------------- */
 
 h1,h2,h3,h4{
     text-transform: uppercase;
 }
 
 .btn {
-    inline-size: 4rem;
+    min-inline-size: 4rem;
     block-size: 2rem;
     background: none;
     border: 1px solid var(--banner-color);
+    border-radius: 2px;
     color: var(--button-color);
     font-family: var(--header-font);
     text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn:hover{
+    box-shadow: 0 0 6px var(--banner-color), inset 0 0 4px var(--banner-color);
 }
 
 #header{
@@ -109,6 +113,7 @@ h1{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    filter: drop-shadow(0 0 3px #333);
 }
 
 h2{
@@ -117,6 +122,8 @@ h2{
     text-align: center;
 }
 
+
+/* ----------------------------------- */
 /* ------------ HEADER -------------- */
 #page-icon{
     inline-size: 3.75rem;
@@ -208,7 +215,8 @@ h2{
     }
 }
 
-/* --------------- */
+/* ----------------------------------- */
+/* ---------- INDEX PAGE ------------ */
 
 #index-container{
     inline-size: 100%;
@@ -226,15 +234,12 @@ h2{
 }
 #index-container>div button{
     margin: auto;
-    min-inline-size: 3rem;
     padding: 0.5rem;
     text-transform: uppercase;
-    background-color: transparent;
-    color: var(--banner-color);
-    border: 1px solid var(--banner-color);
 }
 
 
+/* --------------------------------- */
 /* ---------- DEX PAGE ------------ */
 #dex-header{
     margin-block: 2rem;
@@ -314,16 +319,19 @@ h2{
 }
 
 
+/* ------------------------------------------------- */
 /* ---------- LOGIN/LOGOUT/SIGNUP PAGE ------------ */
 
 .grid-log{
     grid-template-columns: repeat(1, 1fr);
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding-inline: 2rem;
-    background-color: pink;
+    outline: 1px solid var(--banner-color);
+    outline-offset: 5px;
+    /* background-color: pink; */
 }
 
 .grid-log  p{
@@ -332,12 +340,15 @@ h2{
 
 .grid-log  form {
     color: var(--text-color);
-    background-color: #74aad6;
+    /* background-color: #74aad6; */
+}
+
+:is(.grid-log) input{
+    margin: 1em 0;
 }
 
 .custom-btn {
-    margin-block-start: 1rem;
-    margin-inline: auto;
+    margin: 1em auto;
 }
 
 @media (max-width: 650px){

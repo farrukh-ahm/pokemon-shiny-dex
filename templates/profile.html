@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div style="color: aliceblue;">{{profile.username}}</div> 
+    <div style="color:aquamarine">{{profile.password}}</div>
+
+    <a href="{% url 'account_change_password' %}" style="color:beige">Change Password</a>
+
+{% endblock %}
