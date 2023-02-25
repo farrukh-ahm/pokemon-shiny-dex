@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="flex-wrapper col-flex flex-center">
+    <div class="form-handle" >
+        <form method="POST" action="{% url 'addgame' %}">
+            {{gameform}}
+            {% csrf_token %}
+            <button class="btn">Add</button>
+            <br>
+        </form>
+        <small>
+            Games available:
+        </small>
+        <select name="" id="">
+            {% for game in games %}
+                <option value="">{{game}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+
+{% endblock %}
