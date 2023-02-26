@@ -52,6 +52,36 @@
             <br>
         </form>
     </div>
+    <div class="grid-wrapper grid-auto">
+        {% for pokemon in pokemons %}
+            <div class="cards flex-wrapper col-felx">
+                <img src="{{pokemon.featured_image.url}}" alt="{{pokemon.name}}" data-type="{{pokemon.type_1}}">
+                <div class="name-tag flex-wrapper flex-center">
+                    <span>#{{pokemon.dex_no}} :</span>
+                    <span>{{pokemon.name}}</span>
+                </div>
+                <div class="flex-wrapper info-holder-manage col-flex">
+                    <p class="flex-wrapper">
+                        <span class="category">Type 1:</span><span class="info">{{pokemon.type_1}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Type 2</span><span class="info">{{pokemon.type_2}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Gen:</span><span class="info">{{pokemon.gen}}</span>
+                    </p>
+                </div>
+                <div class="flex-wrapper flex-center p-edit-div">
+                    <form method="POST">
+                        <button class="btn">Edit</button>
+                    </form>
+                    <form method="POST">
+                        <button class="btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock %}

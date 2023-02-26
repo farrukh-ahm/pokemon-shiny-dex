@@ -334,13 +334,15 @@ small {
 }
 
 .cards{
-    inline-size: 17rem;
-    block-size: 22rem;
+    inline-size: 17.5rem;
+    block-size: 22.5rem;
     /* clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 0 100%, 0 25%); */
     margin: auto;
+    margin-block-end: 1rem;
     border: 1px solid var(--card-odd);
     border-radius: 1em;
     position: relative;
+    overflow-y: hidden;
     /* background-color: #74aad6; */
 }
 
@@ -352,9 +354,10 @@ small {
     inline-size: 60%;
     block-size: 60%;
     position: absolute;
-    top: 0;
+    top: -5%;
     left: 50%;
     transform: translateX(-50%);
+    /* background-color: #1CB8F5; */
 }
 
 .name-tag{
@@ -464,4 +467,28 @@ small {
     .pokemon-form label{
         font-size: 0.75em;
     }
+}
+
+.info-holder-manage{
+    inline-size: 100%;
+    line-height: 0.25em;
+    font-size: 1em;
+    position: absolute;
+    left:0;
+    bottom:25%;
+    padding-inline-start: 0.5em;
+    /* background-color: #6a548d; */
+}
+
+.info-holder-manage>p{
+    inline-size: 100%;
+    --gap: 0.5em;
+    /* background-color: #74aad6; */
+}
+
+.p-edit-div {
+    inline-size: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 1em;
 }

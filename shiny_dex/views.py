@@ -37,7 +37,7 @@ class Manage(View):
     def get(self, request, *args, **kwargs):
         games = Game.objects.all()
         balls = Pokeball.objects.all()
-        pokemon = Pokemon.objects.all()
+        pokemons = Pokemon.objects.all()
         
         gameform = GameForm()
         ballform = PokeballForm()
@@ -46,7 +46,7 @@ class Manage(View):
         context = {
             'games': games,
             'balls': balls,
-            'pokemon': pokemon,
+            'pokemons': pokemons,
             'gameform': gameform,
             'ballform': ballform,
             'pokemonform': PokemonForm,
