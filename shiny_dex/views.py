@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.utils.text import slugify
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.views import View
 from .models import Game, Pokeball, Pokemon, User_Shiny
@@ -62,8 +63,11 @@ class Manage(View):
             pokemon.slug = slugify(pokemon.name)
             pokemon.save()
 
+            messages.success(request, 'Pokemon added!')
+
         else:
             pokemon_form = PokemonForm()
+            messages.error(request, 'Error adding pokemon')
 
         return redirect(reverse('manage'))
 
@@ -74,6 +78,8 @@ class AddGame(View):
         gameform = GameForm(request.POST)
         if gameform.is_valid():
             gameform.save()
+
+            messages.success(request, 'Game added!')
 
         else:
             gameform = GameForm()
@@ -88,6 +94,9 @@ class AddBall(View):
 
         if ballform.is_valid():
             ballform.save()
+
+            messages.success(request, 'Pokeball added!')
+
         else:
             ballform = PokeballForm()
 

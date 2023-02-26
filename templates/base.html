@@ -35,6 +35,15 @@
             </ul>
         </nav>
     </header>
+
+    <div class="flex-wrapper flex-center" id="message" style="margin-block-start: 1em;">
+        {% if messages %}
+            {% for message in messages %}
+                <p class="{{message.tags}}">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
     {% block content %}
     
     {% endblock %}

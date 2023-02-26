@@ -180,6 +180,16 @@ small {
     }
 }
 
+.success{
+    background-color: #C6E4F0;
+    padding-inline: 1em;
+}
+
+.error, .warning {
+    background-color: #FF9E86;
+    padding-inline: 1em;
+}
+
 /* ----------------------------------- */
 /* ------------ HEADER -------------- */
 #page-icon{
