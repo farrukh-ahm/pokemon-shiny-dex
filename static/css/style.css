@@ -146,7 +146,13 @@ form input:focus{
 
 select{
     font-size: 0.75em;
-    color: var(--banner-color)
+    color: var(--banner-color);
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    padding-inline: 2px;
+    /* box-shadow: none;
+    outline: none; */
     /* background-color: #1CB8F5; */
 }
 
@@ -431,3 +437,21 @@ small {
 /* ------------------------------------------------------------ */
 /* ------------------------Manage Page ------------------------*/
 
+
+.btn-div {
+    display: flex;
+    justify-content: flex-end;
+    padding-inline: 1em;
+    /* background-color: #6a548d; */
+}
+
+/* .pokemon-form-btn{
+    background-color: #90e9b5 !important;
+} */
+
+@media (max-width: 500px) {
+    
+    .pokemon-form label{
+        font-size: 0.75em;
+    }
+}

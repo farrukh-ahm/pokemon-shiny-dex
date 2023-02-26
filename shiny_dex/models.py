@@ -27,8 +27,11 @@ class Pokemon(models.Model):
     slug = models.SlugField(max_length=100, unique=True, null=True)
     featured_image = models.ImageField(upload_to='shinydex/', default='placeholder')
     type_1 = models.CharField(max_length=50)
-    type_2 = models.CharField(max_length=50)
+    type_2 = models.CharField(max_length=50, null=True)
     gen = models.IntegerField(default=1)
+
+    class Meta:
+        ordering = ['dex_no']
 
     def __str__(self):
         return f'{self.dex_no}: {self.name}'

@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 from django.views import View
 from .models import Game, Pokeball, Pokemon, User_Shiny
@@ -35,18 +36,36 @@ class Manage(View):
     def get(self, request, *args, **kwargs):
         games = Game.objects.all()
         balls = Pokeball.objects.all()
+        pokemon = Pokemon.objects.all()
         
         gameform = GameForm()
         ballform = PokeballForm()
+        pokemonform = PokemonForm()
 
         context = {
             'games': games,
             'balls': balls,
+            'pokemon': pokemon,
             'gameform': gameform,
             'ballform': ballform,
+            'pokemonform': PokemonForm,
         }
 
         return render(request, 'manage.html', context)
+
+    def post(self, request, *args, **kwargs):
+        queryset = Pokemon.objects.all()
+        pokemon_form = PokemonForm(request.POST, request.FILES)
+
+        if pokemon_form.is_valid():
+            pokemon = pokemon_form.save(commit=False)
+            pokemon.slug = slugify(pokemon.name)
+            pokemon.save()
+
+        else:
+            pokemon_form = PokemonForm()
+
+        return redirect(reverse('manage'))
 
 
 class AddGame(View):

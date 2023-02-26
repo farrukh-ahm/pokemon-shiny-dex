@@ -5,6 +5,7 @@
 
 <div class="flex-wrapper col-flex flex-center">
     
+    <!-- Game Form -->
     <div class="form-handle" >
         <form method="POST" action="{% url 'addgame' %}">
             {{gameform}}
@@ -22,6 +23,7 @@
         </select>
     </div>
     
+    <!-- Pokeball Form -->
     <div class="form-handle" >
         <form method="POST" action="{% url 'addball' %}">
             {{ballform}}
@@ -30,13 +32,25 @@
             <br>
         </form>
         <small>
-            balls available:
+            Balls available:
         </small>
         <select name="" id="">
             {% for ball in balls %}
                 <option value="{{ball}}">{{ball}}</option>
             {% endfor %}
         </select>
+    </div>
+    
+    <!-- Pokemon Form -->
+    <div class="form-handle">
+        <form method="POST" enctype="multipart/form-data" class="pokemon-form">
+            {{pokemonform.as_p}}
+            {% csrf_token %}
+            <div class="btn-div">
+                <button class="btn pokemon-form-btn">Add</button>
+            </div>
+            <br>
+        </form>
     </div>
 </div>
 
