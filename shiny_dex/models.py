@@ -25,7 +25,7 @@ class Pokemon(models.Model):
     dex_no = models.IntegerField(unique=True)
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=100, unique=True, null=True)
-    featured_image = CloudinaryField('shinydex/', default='placeholder')
+    featured_image = models.ImageField(upload_to='shinydex/', default='placeholder')
     type_1 = models.CharField(max_length=50)
     type_2 = models.CharField(max_length=50)
     gen = models.IntegerField(default=1)
