@@ -34,11 +34,16 @@ class Manage(View):
 
     def get(self, request, *args, **kwargs):
         games = Game.objects.all()
+        balls = Pokeball.objects.all()
+        
         gameform = GameForm()
+        ballform = PokeballForm()
 
         context = {
             'games': games,
+            'balls': balls,
             'gameform': gameform,
+            'ballform': ballform,
         }
 
         return render(request, 'manage.html', context)
@@ -50,8 +55,21 @@ class AddGame(View):
         gameform = GameForm(request.POST)
         if gameform.is_valid():
             gameform.save()
-        
+
         else:
             gameform = GameForm()
+
+        return redirect(reverse('manage'))
+
+
+class AddBall(View):
+
+    def post(self, request, *args, **kwargs):
+        ballform = PokeballForm(request.POST)
+
+        if ballform.is_valid():
+            ballform.save()
+        else:
+            ballform = PokeballForm()
 
         return redirect(reverse('manage'))

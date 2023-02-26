@@ -4,6 +4,7 @@
 
 
 <div class="flex-wrapper col-flex flex-center">
+    
     <div class="form-handle" >
         <form method="POST" action="{% url 'addgame' %}">
             {{gameform}}
@@ -16,10 +17,27 @@
         </small>
         <select name="" id="">
             {% for game in games %}
-                <option value="">{{game}}</option>
+                <option value="{{game}}">{{game}}</option>
             {% endfor %}
         </select>
     </div>
-
+    
+    <div class="form-handle" >
+        <form method="POST" action="{% url 'addball' %}">
+            {{ballform}}
+            {% csrf_token %}
+            <button class="btn">Add</button>
+            <br>
+        </form>
+        <small>
+            balls available:
+        </small>
+        <select name="" id="">
+            {% for ball in balls %}
+                <option value="{{ball}}">{{ball}}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
 
 {% endblock %}
