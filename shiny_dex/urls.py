@@ -8,6 +8,7 @@ urlpatterns = [
     path('profile/<str:user>', views.Profile.as_view(), name='profile'),
     path('manage/', views.Manage.as_view(), name='manage'),
     path('manage/addgame', views.AddGame.as_view(), name='addgame'),
-    path('manage/pokeball', views.AddBall.as_view(), name='addball')
+    path('manage/pokeball', views.AddBall.as_view(), name='addball'),
+    path('manage/editpokemon/<slug:slug>', views.ManagePokemonEdit.as_view(), name='managepokemonedit'),
 
 ]

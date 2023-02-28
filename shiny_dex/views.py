@@ -101,3 +101,37 @@ class AddBall(View):
             ballform = PokeballForm()
 
         return redirect(reverse('manage'))
+
+
+class ManagePokemonEdit(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Pokemon.objects.all()
+        pokemon = get_object_or_404(queryset, slug=slug)
+        pokemon_form = PokemonForm(instance=pokemon)
+
+        context = {
+            'pokemon': pokemon,
+            'pokemon_form': pokemon_form,
+        }
+
+        return render(request, 'managepokemonedit.html', context)
+
+    def post(self, request, slug, *args, **kwargs):
+
+        queryset = Pokemon.objects.all()
+        pokemon = get_object_or_404(queryset, slug=slug)
+
+        pokemon_form = PokemonForm(request.POST, request.FILES, instance=pokemon)
+
+        if pokemon_form.is_valid():
+            pokemon_form.save()
+
+            messages.success(request, 'Pokemon Data Updatd!')
+
+        else:
+            pokemon_form = PokemonForm()
+
+            messages.error(request, 'Failed to update data')
+
+        return redirect('manage')

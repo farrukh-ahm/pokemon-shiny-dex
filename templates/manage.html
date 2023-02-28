@@ -52,6 +52,8 @@
             <br>
         </form>
     </div>
+
+    <!-- List of Pokemon in database -->
     <div class="grid-wrapper grid-auto">
         {% for pokemon in pokemons %}
             <div class="cards flex-wrapper col-felx">
@@ -72,9 +74,9 @@
                     </p>
                 </div>
                 <div class="flex-wrapper flex-center p-edit-div">
-                    <form method="POST">
-                        <button class="btn">Edit</button>
-                    </form>
+                        <a href="{% url 'managepokemonedit' pokemon.slug %}">
+                            <button class="btn">Edit</button>
+                        </a>
                     <form method="POST">
                         <button class="btn">Delete</button>
                     </form>
