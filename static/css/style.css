@@ -432,7 +432,7 @@ dialog button {
     color: var(--text-color);
 }
 
-.info{
+.info-p{
     font-size: smaller;
     color: var(--info);
 }

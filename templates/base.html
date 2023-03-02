@@ -36,13 +36,16 @@
         </nav>
     </header>
 
-    <div class="flex-wrapper flex-center" id="message" style="margin-block-start: 1em;">
-        {% if messages %}
+    
+    {% if messages %}
+        <div class="flex-wrapper flex-center" id="message" style="margin-block-start: 1em;">
+            
             {% for message in messages %}
                 <p class="{{message.tags}}">{{message}}</p>
             {% endfor %}
-        {% endif %}
-    </div>
+        
+        </div>
+    {% endif %}
 
     {% block content %}
     
