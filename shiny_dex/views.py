@@ -144,4 +144,5 @@ class ManagePokemonDelete(View):
         pokemondel = get_object_or_404(queryset, slug=slug)
         pokemondel.delete()
 
+        messages.warning(request, "Pokemon data deleted")
         return redirect(reverse('manage'))
