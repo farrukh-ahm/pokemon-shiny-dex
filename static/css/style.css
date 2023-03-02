@@ -180,7 +180,7 @@ small {
     }
 }
 
-.success{
+.success, .info, .debug{
     background-color: #C6E4F0;
     padding-inline: 1em;
 }
@@ -188,6 +188,34 @@ small {
 .error, .warning {
     background-color: #FF9E86;
     padding-inline: 1em;
+}
+
+
+dialog{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-block-size: 5rem;
+    inline-size: 25rem;
+    padding-inline: 2rem;
+    background-color: var(--body-color);
+    border: 1px solid var(--banner-color);
+    border-radius: 5px;
+    color: var(--header-color) 
+}
+
+dialog::backdrop{
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+}
+
+dialog > p{
+    margin: 10px auto;
+}
+
+dialog button {
+    margin-block-end: 5px;
 }
 
 /* ----------------------------------- */

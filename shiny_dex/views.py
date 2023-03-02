@@ -135,3 +135,13 @@ class ManagePokemonEdit(View):
             messages.error(request, 'Failed to update data')
 
         return redirect('manage')
+
+
+class ManagePokemonDelete(View):
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Pokemon.objects.all()
+        pokemondel = get_object_or_404(queryset, slug=slug)
+        pokemondel.delete()
+
+        return redirect(reverse('manage'))

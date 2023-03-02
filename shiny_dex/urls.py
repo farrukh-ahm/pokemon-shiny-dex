@@ -10,5 +10,6 @@ urlpatterns = [
     path('manage/addgame', views.AddGame.as_view(), name='addgame'),
     path('manage/pokeball', views.AddBall.as_view(), name='addball'),
     path('manage/editpokemon/<slug:slug>', views.ManagePokemonEdit.as_view(), name='managepokemonedit'),
+    path('manage/deletepokemon/<slug:slug>', views.ManagePokemonDelete.as_view(), name='deletepokemon'),
 
 ]
