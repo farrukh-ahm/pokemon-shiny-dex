@@ -379,10 +379,11 @@ dialog button {
 }
 
 .cards img{
-    inline-size: 60%;
-    block-size: 60%;
+    inline-size: 50%;
+    aspect-ratio: 1;
+    /* block-size: 60%; */
     position: absolute;
-    top: -5%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
     /* background-color: #1CB8F5; */
