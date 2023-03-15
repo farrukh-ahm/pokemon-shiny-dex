@@ -14,7 +14,7 @@ html, body{
     --body-font: 'Varela Round', sans-serif;
     --header-font: 'Dancing Script', cursive;
     --title: 'Caveat', cursive;
-    --body-color: #242129;
+    --body-color: #000000;
     --banner-color: #B54936;
     --header-color: #fcf7ff;
     --button-color: #fcf7ff;
@@ -25,7 +25,7 @@ html, body{
 }
 
 body{
-    background-color: black;
+    background-color: var(--body-color);
     overflow-x: hidden;
     font-family: var(--body-font);
 }
@@ -146,14 +146,15 @@ form input:focus{
 
 select{
     font-size: 0.75em;
-    color: var(--banner-color);
+    color: var(--text-color);
     border-radius: 0;
-    border: none;
+    border: 1px solid var(--banner-color);
     cursor: pointer;
-    padding-inline: 2px;
+    padding-inline-start: 3px;
+    padding-inline-end: 2px;
     /* box-shadow: none;
     outline: none; */
-    /* background-color: #1CB8F5; */
+    background-color: var(--body-color);
 }
 
 .form-handle {
@@ -386,7 +387,23 @@ dialog button {
     top: 5%;
     left: 50%;
     transform: translateX(-50%);
+    filter: drop-shadow(0 0 5px var(--card-odd));
+    animation: poke-glow 2s alternate infinite;
     /* background-color: #1CB8F5; */
+}
+
+@keyframes poke-glow{
+    0%{filter: drop-shadow(0 0 5px var(--card-odd))}
+
+    /* 20%{filter: drop-shadow(0 0 6px var(--card-even))} */
+
+    /* 40%{filter: drop-shadow(0 0 7px var(--card-even))} */
+
+    /* 60%{filter: drop-shadow(0 0 8px var(--card-even))} */
+
+    /* 80%{filter: drop-shadow(0 0 9px var(--card-odd))} */
+
+    100%{filter: drop-shadow(0 0 5px var(--card-even))}
 }
 
 .name-tag{
@@ -397,7 +414,9 @@ dialog button {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background-color: var(--banner-color);
+    border: 1px solid var(--banner-color);
+    box-shadow: 0 0 2px var(--banner-color);
+    /* background-color: var(--banner-color); */
     gap: 0.5rem;
 }
 
