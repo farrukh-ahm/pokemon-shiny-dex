@@ -55,7 +55,20 @@ INSTALLED_APPS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+# ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# ACCOUNT_USERNAME_REQUIRED = True
+
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST = os.environ.get('EMAIL_SMTP')
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST')
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# ACCOUNT_SIGNUP_FORM_CLASS = 'shiny_database.forms.SignupForm'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

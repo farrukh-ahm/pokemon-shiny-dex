@@ -15,6 +15,7 @@ html, body{
     --header-font: 'Dancing Script', cursive;
     --title: 'Caveat', cursive;
     --body-color: #000000;
+    --body-gradiet: linear-gradient(to right, #212123, #252527, #28292a, #2c2d2e, #303132, #333435, #363739, #393a3c, #3d3d40, #404043, #444447, #48474a);;
     --banner-color: #B54936;
     --header-color: #fcf7ff;
     --button-color: #fcf7ff;
@@ -25,7 +26,12 @@ html, body{
 }
 
 body{
-    background-color: var(--body-color);
+    /* background-color: var(--body-color); */
+    background-image: var(--body-gradiet);
+    /* background-image: url(https://images.unsplash.com/photo-1647892591690-25cf830cda51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80); */
+    /* background-position: center; */
+    /* background-size: cover;
+    background-repeat: no-repeat; */
     overflow-x: hidden;
     font-family: var(--body-font);
 }
@@ -372,7 +378,8 @@ dialog button {
     border-radius: 1em;
     position: relative;
     overflow-y: hidden;
-    /* background-color: #74aad6; */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .cards:nth-child(even){

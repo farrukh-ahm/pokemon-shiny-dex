@@ -22,7 +22,7 @@ class Pokeball(models.Model):
 
 
 class Pokemon(models.Model):
-    dex_no = models.IntegerField(unique=True)
+    dex_no = models.IntegerField(unique=False)
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=100, unique=True, null=True)
     featured_image = models.ImageField(upload_to='shinydex/', default='placeholder')
