@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Pokeball, Pokemon, Game, User_Shiny
+from .models import Pokeball, Pokemon, Game, UserShiny
 
 # Register your models here.
 @admin.register(Pokeball)
@@ -20,7 +20,7 @@ class PokemonAdmin(admin.ModelAdmin):
     search_fields = ['dex_no', 'name']
 
 
-@admin.register(User_Shiny)
+@admin.register(UserShiny)
 class UserShinyAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('user', 'pokemon')}
     list_display = ['user', 'slug', 'pokemon', 'nick_name', 'game', 'pokeball',

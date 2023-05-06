@@ -3,7 +3,7 @@ from django.utils.text import slugify
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.views import View
-from .models import Game, Pokeball, Pokemon, User_Shiny
+from .models import Game, Pokeball, Pokemon, UserShiny
 from .forms import *
 
 # Create your views here.
@@ -148,23 +148,40 @@ class ManagePokemonDelete(View):
         return redirect(reverse('manage'))
 
 
-class UserShiny(View):
+class UserShinyView(View):
 
     def get(self, request, *args, **kwargs):
         error = "No data"
+        queryset = UserShiny.objects.all()
+
         try:
-            queryset = User_Shiny.obejcts.all()
-            user_shiny = get_object_or_404(queryset, user=request.user)
+            usershiny = get_object_or_404(queryset, user=request.user)
 
         except:
-            user_shiny = []
+            usershiny = []
 
         shiny_form = UserShinyForm()
 
         context = {
-            'user_shiny': user_shiny,
+            'usershiny': usershiny,
             'shiny_form': shiny_form,
             'error': error,
         }
 
         return render(request, 'addshiny.html', context)
+
+    def post(self, request, *args, **kwargs):
+        shinyform = UserShinyForm(request.POST)
+
+        if shinyform.is_valid():
+            shiny = shinyform.save(commit=False)
+            shiny.user = request.user
+            shiny.slug = slugify(f'{shiny.pokemon.name}-{shiny.user}')
+            shiny.save()
+            messages.success(request, 'Shiny Pokemon Added!')
+
+        else:
+            shinyform = UserShinyForm()
+            messages.warning(request, "Couldn't add the data")
+
+        return redirect(reverse('addshiny', args=[request.user]))

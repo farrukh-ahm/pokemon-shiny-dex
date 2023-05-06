@@ -17,11 +17,19 @@
     
     </div>
     
-{% if user_shiny.length > 0 %}
+    {% if usershiny|length %}
+    {% for pokemon in usershiny %}
+    <p style="color:antiquewhite">{{pokemon.pokemon.name}}</p>
+    {% endfor %}
+    {% else %}
+    <p style="color:antiquewhite">No data</p>
+    {% endif %}
+
+<!-- {% if usershiny|length > 0 %}
     <p>Pokemon List</p>
 
 {% else %}
-    <p>{{error}}</p>
+    <p>{{error}}</p> -->
 {% endif %}
 
 {% endblock %}

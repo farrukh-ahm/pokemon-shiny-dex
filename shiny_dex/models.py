@@ -37,7 +37,7 @@ class Pokemon(models.Model):
         return f'{self.dex_no}: {self.name}'
 
 
-class User_Shiny(models.Model):
+class UserShiny(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
     pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name='pokemon')
     slug = models.SlugField(max_length=100, unique=True, null=True)

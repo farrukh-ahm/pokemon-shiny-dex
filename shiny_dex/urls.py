@@ -11,6 +11,6 @@ urlpatterns = [
     path('manage/pokeball', views.AddBall.as_view(), name='addball'),
     path('manage/editpokemon/<slug:slug>', views.ManagePokemonEdit.as_view(), name='managepokemonedit'),
     path('manage/deletepokemon/<slug:slug>', views.ManagePokemonDelete.as_view(), name='deletepokemon'),
-    path('add_shiny/<str:user>', views.UserShiny.as_view(), name='addshiny'),
+    path('add_shiny/<str:user>', views.UserShinyView.as_view(), name='addshiny'),
 
 ]

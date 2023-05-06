@@ -32,7 +32,7 @@ class PokemonForm(forms.ModelForm):
 class UserShinyForm(forms.ModelForm):
 
     class Meta:
-        model = User_Shiny
+        model = UserShiny
         fields = (
             'pokemon', 'nick_name', 'game', 'pokeball',
             'gender', 'encounters', 'caught_on', 'method',
