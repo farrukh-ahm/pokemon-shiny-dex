@@ -146,3 +146,25 @@ class ManagePokemonDelete(View):
 
         messages.warning(request, "Pokemon data deleted")
         return redirect(reverse('manage'))
+
+
+class UserShiny(View):
+
+    def get(self, request, *args, **kwargs):
+        error = "No data"
+        try:
+            queryset = User_Shiny.obejcts.all()
+            user_shiny = get_object_or_404(queryset, user=request.user)
+
+        except:
+            user_shiny = []
+
+        shiny_form = UserShinyForm()
+
+        context = {
+            'user_shiny': user_shiny,
+            'shiny_form': shiny_form,
+            'error': error,
+        }
+
+        return render(request, 'addshiny.html', context)

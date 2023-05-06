@@ -2,6 +2,10 @@ from django import forms
 from .models import *
 
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
 class GameForm(forms.ModelForm):
 
     class Meta:
@@ -23,3 +27,14 @@ class PokemonForm(forms.ModelForm):
         fields = ('dex_no', 'name', 'featured_image',
                   'type_1', 'type_2', 'gen',
                   )
+
+
+class UserShinyForm(forms.ModelForm):
+
+    class Meta:
+        model = User_Shiny
+        fields = (
+            'pokemon', 'nick_name', 'game', 'pokeball',
+            'gender', 'encounters', 'caught_on', 'method',
+            )
+        widgets = {'caught_on': DateInput()}

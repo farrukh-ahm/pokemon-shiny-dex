@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="flex-wrapper col-flex flex-center">
+
+        <div class="form-handle">
+            <form method="POST" class="shiny-add-form">
+                {{shiny_form.as_p}}
+                {% csrf_token %}
+                <div class="btn-div">
+                    <button class="btn pokemon-form-btn">Add</button>
+                </div>
+                <br>
+            </form>
+        </div>
+    
+    </div>
+    
+{% if user_shiny.length > 0 %}
+    <p>Pokemon List</p>
+
+{% else %}
+    <p>{{error}}</p>
+{% endif %}
+
+{% endblock %}
