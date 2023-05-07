@@ -152,7 +152,7 @@ class UserShinyView(View):
 
     def get(self, request, *args, **kwargs):
         error = "No data"
-        queryset = UserShiny.objects.all()
+        queryset = UserShiny.objects.all().order_by('pokemon__dex_no')
 
         try:
             usershiny = queryset.filter(user=request.user)
