@@ -155,14 +155,15 @@ class UserShinyView(View):
         queryset = UserShiny.objects.all()
 
         try:
-            usershiny = get_object_or_404(queryset, user=request.user)
+            usershiny = queryset.filter(user=request.user)
 
-        except:
-            usershiny = []
+        except queryset.DoesNotExist:
+            usershiny = {}
 
         shiny_form = UserShinyForm()
 
         context = {
+            'queryset': queryset,
             'usershiny': usershiny,
             'shiny_form': shiny_form,
             'error': error,

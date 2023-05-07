@@ -17,19 +17,50 @@
     
     </div>
     
-    {% if usershiny|length %}
-    {% for pokemon in usershiny %}
-    <p style="color:antiquewhite">{{pokemon.pokemon.name}}</p>
-    {% endfor %}
+    {% if usershiny|length > 0 %}
+    <div class="grid-wrapper grid-auto">
+        {% for pokemon in usershiny %}
+            <div class="cards flex-wrapper col-felx">
+                <img src="{{ pokemon.pokemon.featured_image.url }}" alt="{{pokemon.pokemon.name}}" data-type="{{pokemon.pokemon.type_1}}">
+                <div class="name-tag flex-wrapper flex-center">
+                    <span>#{{pokemon.pokemon.dex_no}} :</span>
+                    <span>{{pokemon.pokemon.name}}</span>
+                </div>
+                <div class="flex-wrapper info-holder col-flex">
+                    <p class="flex-wrapper">
+                        <span class="category">Nickname:</span><span class="info-p">{{pokemon.nick_name}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Gender:</span><span class="info-p">{{pokemon.get_gender_display}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Caught On:</span><span class="info-p">{{pokemon.caught_on}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Pokeball used:</span><span class="info-p">{{pokemon.pokeball}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Encounters:</span><span class="info-p">{{pokemon.encounters}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Game:</span><span class="info-p">{{pokemon.game}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Method:</span><span class="info-p">{{pokemon.method}}</span>
+                    </p>
+                </div>
+                <div class="flex-wrapper col-flex dex-edit-buttons">
+                    <a href="{% url 'managepokemonedit' pokemon.slug %}">
+                        <button class="btn-dex"><i class="fas fa-pen-nib"></i></button>
+                    </a>
+                    <button class="btn-dex modal1-open" data-type="{{pokemon.slug}}"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
     {% else %}
-    <p style="color:antiquewhite">No data</p>
+    <p>No record</p>
     {% endif %}
-
-<!-- {% if usershiny|length > 0 %}
-    <p>Pokemon List</p>
-
-{% else %}
-    <p>{{error}}</p> -->
-{% endif %}
 
 {% endblock %}

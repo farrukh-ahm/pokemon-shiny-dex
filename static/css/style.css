@@ -370,7 +370,7 @@ dialog button {
 
 .cards{
     inline-size: 17.5rem;
-    block-size: 22.5rem;
+    min-block-size: 22.5rem;
     /* clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 0 100%, 0 25%); */
     margin: auto;
     margin-block-end: 1rem;
@@ -438,7 +438,7 @@ dialog button {
     font-size: 1em;
     position: absolute;
     left:0;
-    bottom:1em;
+    bottom:1.5em;
     padding-inline-start: 0.5em;
     /* background-color: #6a548d; */
 }
@@ -545,5 +545,37 @@ dialog button {
     inline-size: 100%;
     position: absolute;
     left: 0;
-    bottom: 1em;
+    bottom: 1rem;
+}
+
+
+/* ------------------------ Enteries for the Add/Edit Page ------------------ */
+
+.dex-edit-buttons {
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    padding-inline-end: 0.35em;   
+}
+
+.btn-dex {
+    min-inline-size: 2.5rem;
+    aspect-ratio: 1;
+    /* block-size: 2rem; */
+    background: none;
+    border: 1px solid var(--banner-color);
+    border-radius: 50%;
+    color: var(--button-color);
+    font-family: var(--header-font);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-dex:hover{
+    box-shadow: 0 0 6px var(--banner-color), inset 0 0 4px var(--banner-color);
+}
+
+i {
+    color: var(--header-color)
 }
