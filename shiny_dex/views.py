@@ -186,3 +186,16 @@ class UserShinyView(View):
             messages.warning(request, "Couldn't add the data")
 
         return redirect(reverse('addshiny', args=[request.user]))
+
+
+class UserShinyEdit(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = UserShiny.get.filter(user=request.user)
+        pokemon = queryset.get_object_or_404(slug=slug)
+
+        context = {
+            'pokemon': pokemon,
+        }
+
+        return render(request, 'addshiny.html', context)

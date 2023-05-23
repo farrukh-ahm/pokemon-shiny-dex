@@ -20,7 +20,7 @@
     {% if usershiny|length > 0 %}
     <div class="grid-wrapper grid-auto">
         {% for pokemon in usershiny %}
-            <div class="cards flex-wrapper col-felx">
+            <div class="cards flex-wrapper col-flex">
                 <img src="{{ pokemon.pokemon.featured_image.url }}" alt="{{pokemon.pokemon.name}}" data-type="{{pokemon.pokemon.type_1}}">
                 <div class="name-tag flex-wrapper flex-center">
                     <span>#{{pokemon.pokemon.dex_no}} :</span>
@@ -50,9 +50,7 @@
                     </p>
                 </div>
                 <div class="flex-wrapper col-flex dex-edit-buttons">
-                    <a href="{}">
-                        <button class="btn-dex"><i class="fas fa-pen-nib"></i></button>
-                    </a>
+                        <button class="btn-dex user-shiny-edit-modal-open" data-type="{{pokemon.slug}}"><i class="fas fa-pen-nib"></i></button>
                     <button class="btn-dex modal1-open" data-type=""><i class="fas fa-trash"></i></button>
                 </div>
             </div>
@@ -62,5 +60,10 @@
     {% else %}
     <p>No record</p>
     {% endif %}
+
+    <dialog class="user-shiny-edit-modal">
+        <form class=".edit-slug" ></form>
+        <button class="user-shiny-edit-modal-close">Close</button>
+    </dialog>
 
 {% endblock %}

@@ -53,3 +53,21 @@ for(let modal of modal1Close){
         delModal.close()
     })
 }
+
+
+// USER SHINY EDIT
+
+const editModal =  document.querySelector(".user-shiny-edit-modal");
+const editModalOpen = document.getElementsByClassName("user-shiny-edit-modal-open");
+const editModalClose = document.querySelector(".user-shiny-edit-modal-close");
+// const addEditSlug = document.querySelector(".addEditSlug")
+
+for(let btn of editModalOpen){
+    btn.addEventListener("click", ()=>{
+        console.log("click")
+        editModal.showModal()
+    })
+}
+editModalClose.addEventListener("click", ()=>{
+    editModal.close()
+})

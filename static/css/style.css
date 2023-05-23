@@ -28,10 +28,6 @@ html, body{
 body{
     /* background-color: var(--body-color); */
     background-image: var(--body-gradiet);
-    /* background-image: url(https://images.unsplash.com/photo-1647892591690-25cf830cda51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80); */
-    /* background-position: center; */
-    /* background-size: cover;
-    background-repeat: no-repeat; */
     overflow-x: hidden;
     font-family: var(--body-font);
 }
@@ -58,8 +54,8 @@ body{
 .grid-wrapper{
     display: grid;
     gap: var(--gaps, 1rem);
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    place-content: center;
 }
 
 .grid-auto{
@@ -68,13 +64,13 @@ body{
 
 @media (min-width: 500px){
     .grid-auto{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, auto);
     }
 }
 
 @media (min-width: 850px){
     .grid-auto{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, auto);
         --gaps: 2rem;
     }
 }
@@ -134,6 +130,10 @@ form {
     /* background-color: #74aad6; */
 }
 
+form label {
+    font-size: 1rem;
+}
+
 form input{
     margin: 1em 2em;
     padding: 0.25em;
@@ -152,7 +152,7 @@ form input:focus{
 
 select{
     font-size: 0.75em;
-    color: var(--text-color);
+    color: #fcf7ff;
     border-radius: 0;
     border: 1px solid var(--banner-color);
     cursor: pointer;
@@ -160,7 +160,11 @@ select{
     padding-inline-end: 2px;
     /* box-shadow: none;
     outline: none; */
-    background-color: var(--body-color);
+    background: transparent;
+}
+
+option{
+    color: #404043;
 }
 
 .form-handle {
