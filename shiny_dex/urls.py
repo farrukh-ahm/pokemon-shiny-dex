@@ -12,5 +12,5 @@ urlpatterns = [
     path('manage/editpokemon/<slug:slug>', views.ManagePokemonEdit.as_view(), name='managepokemonedit'),
     path('manage/deletepokemon/<slug:slug>', views.ManagePokemonDelete.as_view(), name='deletepokemon'),
     path('add_shiny/<str:user>', views.UserShinyView.as_view(), name='addshiny'),
-    path('add_shiny/edit/<str:user>', views.UserShinyEdit.as_view(), name='editshiny')
+    path('add_shiny/edit/<str:user>/<slug:slug>', views.UserShinyEdit.as_view(), name='editshiny')
 ]

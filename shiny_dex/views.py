@@ -191,11 +191,12 @@ class UserShinyView(View):
 class UserShinyEdit(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = UserShiny.get.filter(user=request.user)
-        pokemon = queryset.get_object_or_404(slug=slug)
+        queryset = UserShiny.objects.filter(user=request.user)
+        pokemon = get_object_or_404(queryset, slug=slug)
 
         context = {
             'pokemon': pokemon,
         }
 
-        return render(request, 'addshiny.html', context)
+        # return redirect(reverse('editshiny', args=[request.user]), context)
+        return render(request, '', context)
