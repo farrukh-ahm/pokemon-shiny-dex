@@ -3,6 +3,7 @@ from django.utils.text import slugify
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.views import View
+from django.template.response import TemplateResponse
 from .models import Game, Pokeball, Pokemon, UserShiny
 from .forms import *
 
@@ -169,7 +170,7 @@ class UserShinyView(View):
             'error': error,
         }
 
-        return render(request, 'addshiny.html', context)
+        return TemplateResponse(request, 'addshiny.html', context)
 
     def post(self, request, *args, **kwargs):
         shinyform = UserShinyForm(request.POST)
@@ -193,10 +194,31 @@ class UserShinyEdit(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = UserShiny.objects.filter(user=request.user)
         pokemon = get_object_or_404(queryset, slug=slug)
+        editform = UserShinyEditForm(instance=pokemon)
 
         context = {
             'pokemon': pokemon,
+            'editform': editform
         }
 
-        # return redirect(reverse('editshiny', args=[request.user]), context)
-        return render(request, '', context)
+        return render(request, 'editshiny.html', context)
+        # return render(request, 'addshiny.html', context)
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = UserShiny.objects.filter(user=request.user)
+        pokemon = get_object_or_404(queryset, slug=slug)
+        editform = UserShinyEditForm(request.POST, instance=pokemon)
+
+        if editform.is_valid():
+            # edit = editform.save(commit=False)
+            # edit.user = request.user
+            # edit.save()
+            editform.save()
+            messages.success(request, 'Edit Successful!')
+            return redirect(reverse('addshiny', args=[request.user]))
+
+        else:
+            editform = UserShinyForm()
+            messages.warning(request, 'Data Provided Wrong!')
+            return redirect(reverse('addshiny', args=[request.user]))
+

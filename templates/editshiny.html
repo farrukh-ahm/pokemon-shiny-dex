@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="flex-wrapper col-flex flex-center">
+
+        <img src="{{ pokemon.pokemon.featured_image.url }}" alt="{{pokemon.pokemon.name}}" data-type="{{pokemon.pokemon.type_1}}">
+
+        <div class="form-handle">
+            <form method="POST" class="shiny-add-form">
+                {{editform.as_p}}
+                {% csrf_token %}
+                <div class="btn-div">
+                    <button class="btn pokemon-form-btn">Edit</button>
+                </div>
+                <br>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}

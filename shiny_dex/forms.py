@@ -38,3 +38,14 @@ class UserShinyForm(forms.ModelForm):
             'gender', 'encounters', 'caught_on', 'method',
             )
         widgets = {'caught_on': DateInput()}
+
+
+class UserShinyEditForm(forms.ModelForm):
+
+    class Meta:
+        model = UserShiny
+        fields = (
+            'nick_name', 'game', 'pokeball',
+            'gender', 'encounters', 'caught_on', 'method',
+            )
+        widgets = {'caught_on': DateInput()}

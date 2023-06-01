@@ -29,15 +29,15 @@ const modal1Open = document.getElementsByClassName("modal1-open")
 const delConfirm = document.querySelector(".del-confirm")
 const modal1Close = document.getElementsByClassName("modal1-close")
 
-function openCheck(dialog) {
-    if (dialog.open) {
-      console.log("Dialog open");
-    } else {
-      console.log("Dialog closed");
-    }
-  }
+// function openCheck(dialog) {
+//     if (dialog.open) {
+//       console.log("Dialog open");
+//     } else {
+//       console.log("Dialog closed");
+//     }
+//   }
 
-  document.addEventListener("DOMContentLoaded", openCheck)
+//   document.addEventListener("DOMContentLoaded", openCheck)
 
 for(let modal of modal1Open){
     modal.addEventListener("click", (e)=>{
@@ -57,17 +57,26 @@ for(let modal of modal1Close){
 
 // USER SHINY EDIT
 
-const editModal =  document.querySelector(".user-shiny-edit-modal");
-const editModalOpen = document.getElementsByClassName("user-shiny-edit-modal-open");
-const editModalClose = document.querySelector(".user-shiny-edit-modal-close");
-// const addEditSlug = document.querySelector(".addEditSlug")
+const deleteModal =  document.querySelector(".user-shiny-delete-modal");
+const deleteModalOpen = document.getElementsByClassName("user-shiny-delete-modal-open");
+const deleteModalClose = document.querySelector(".user-shiny-delete-modal-close");
+const addDeleteSlug = document.querySelector(".delete-slug")
+const imageAdd = document.querySelector(".add-image")
 
-for(let btn of editModalOpen){
-    btn.addEventListener("click", ()=>{
+for(let btn of deleteModalOpen){
+    btn.addEventListener("click", (e)=>{
         console.log("click")
-        editModal.showModal()
+        deleteModal.showModal()
+        let slug = e.target.getAttribute("data-type")
+        let imageData = e.target.getAttribute("data-image")
+        addDeleteSlug.setAttribute("action", `{% url 'deleteShiny' request.user pokemon.${slug} %}`)
+        imageAdd.setAttribute("src", imageData)
+        console.log(imageData)
+        console.log(slug)
+
     })
 }
-editModalClose.addEventListener("click", ()=>{
-    editModal.close()
+
+deleteModalClose.addEventListener("click", ()=>{
+    deleteModal.close()
 })
