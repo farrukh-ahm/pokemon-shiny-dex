@@ -53,8 +53,8 @@
                     <a href="{% url 'editshiny' request.user pokemon.slug%}">
                         <button class="btn-dex" data-type="{{pokemon.slug}}"><i class="fas fa-pen-nib"></i></button>
                     </a>
-                    <button class="btn-dex user-shiny-delete-modal-open" data-type="{{pokemon.slug}}" data-image="{{pokemon.pokemon.featured_image.url}}" data-user="{{request.user}}">
-                        <i class="fas fa-trash" data-type="{{pokemon.slug}}" data-image="{{pokemon.pokemon.featured_image.url}}"></i>
+                    <button class="btn-dex user-shiny-delete-modal-open" data-type="{{pokemon.slug}}" data-image="{{pokemon.pokemon.featured_image.url}}" data-user="{{user.username}}">
+                        <i class="fas fa-trash" data-type="{{pokemon.slug}}" data-image="{{pokemon.pokemon.featured_image.url}}" data-user="{{user.username}}"></i>
                     </button>
                 </div>
             </div>

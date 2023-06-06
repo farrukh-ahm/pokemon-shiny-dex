@@ -42,7 +42,7 @@ for(let modal of modal1Open){
     modal.addEventListener("click", (e)=>{
         let slug = e.target.getAttribute("data-type")
         delModal.showModal();
-        addSlug.setAttribute("action", `{% url 'deletepokemon' ${slug} %}`)
+        addSlug.setAttribute("action", `deletepokemon/${slug}`)
     })
 }
 
@@ -69,7 +69,8 @@ for(let btn of deleteModalOpen){
         let slug = e.target.getAttribute("data-type")
         let imageData = e.target.getAttribute("data-image")
         let user = e.target.getAttribute("data-user")
-        addDeleteSlug.setAttribute("action", `{% url 'deleteShiny' ${user} ${slug} %}`)
+        console.log(user)
+        addDeleteSlug.setAttribute("action", `/delete/${user}/${slug}`)
         imageAdd.setAttribute("src", imageData)
         console.log(imageData)
         console.log(slug)
