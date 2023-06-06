@@ -89,10 +89,10 @@
     <dialog class="modal1">
         <p>Are you sure you want to delete this data?</p>
         <div class="flex-wrapper flex-center">
-            <form class="add-slug" enctype="multipart/form-data" method="dialog">
+            <form class="add-slug" enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
                 <button class="btn del-confirm" id="">Confirm</button>
             </form>
-            {% csrf_token %}
             <button class="modal1-close btn">Close</button>
         </div>
     </dialog>

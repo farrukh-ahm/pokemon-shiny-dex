@@ -23,7 +23,6 @@ setTimeout(()=>{
 // DELETE MODAL FOR ADMIN
 
 const delModal = document.querySelector(".modal1")
-console.log(delModal)
 const addSlug = document.querySelector(".add-slug")
 const modal1Open = document.getElementsByClassName("modal1-open")
 const delConfirm = document.querySelector(".del-confirm")
@@ -42,8 +41,8 @@ const modal1Close = document.getElementsByClassName("modal1-close")
 for(let modal of modal1Open){
     modal.addEventListener("click", (e)=>{
         let slug = e.target.getAttribute("data-type")
-        addSlug.setAttribute("action", `{% url 'deletepokemon' pokemon.${slug} %}`)
         delModal.showModal();
+        addSlug.setAttribute("action", `{% url 'deletepokemon' ${slug} %}`)
     })
 }
 
@@ -55,7 +54,7 @@ for(let modal of modal1Close){
 }
 
 
-// USER SHINY EDIT
+// USER SHINY DELETE MODAL
 
 const deleteModal =  document.querySelector(".user-shiny-delete-modal");
 const deleteModalOpen = document.getElementsByClassName("user-shiny-delete-modal-open");
@@ -69,7 +68,8 @@ for(let btn of deleteModalOpen){
         deleteModal.showModal()
         let slug = e.target.getAttribute("data-type")
         let imageData = e.target.getAttribute("data-image")
-        addDeleteSlug.setAttribute("action", `{% url 'deleteShiny' request.user pokemon.${slug} %}`)
+        let user = e.target.getAttribute("data-user")
+        addDeleteSlug.setAttribute("action", `{% url 'deleteShiny' ${user} ${slug} %}`)
         imageAdd.setAttribute("src", imageData)
         console.log(imageData)
         console.log(slug)

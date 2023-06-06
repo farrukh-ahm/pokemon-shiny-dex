@@ -222,3 +222,13 @@ class UserShinyEdit(View):
             messages.warning(request, 'Data Provided Wrong!')
             return redirect(reverse('addshiny', args=[request.user]))
 
+
+class UserShinyDelete(View):
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = UserShiny.objects.filter(user=request.user)
+        pokemon = get_object_or_404(queryset, slug=slug)
+        pokemon.delete()
+
+        messages.warning(request, 'Shiny Deleted!')
+        return redirect(reverse('addshiny', args=[request.user]))
