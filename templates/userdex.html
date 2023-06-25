@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for mon in pokemon_list %}
+        {{mon.pokemon.name}}
+    {%endfor%}
+
+
+{% endblock %}

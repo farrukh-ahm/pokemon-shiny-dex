@@ -18,13 +18,13 @@
             <ul class="flex-wrapper nav">
                 <li><a href="/">Home</a></li>
                 {% if user.is_superuser %}
-                <li><a href="{% url 'dex' request.user %}">Dex</a></li>
+                <li><a href="{% url 'userdex' request.user %}">Dex</a></li>
                 <li><a href="{% url 'addshiny' request.user %}">Add/Edit</a></li>
                 <li><a href="{% url 'admin:index' %}">Admin</a></li>
                 <li><a href="{% url 'manage' %}">Manage</a></li>
                 <li><a href="{% url 'account_logout' %}">LogOut</a></li>
                 {%  elif user.is_authenticated %}
-                <li><a href="{% url 'dex' request.user %}">Dex</a></li>
+                <li><a href="{% url 'userdex' request.user %}">Dex</a></li>
                 <li><a href="{% url 'addshiny' request.user %}">Add/Edit</a></li>
                 <li><a href="{% url 'profile' request.user %}">Profile</a></li>
                 <li><a href="{% url 'account_logout' %}">LogOut</a></li>

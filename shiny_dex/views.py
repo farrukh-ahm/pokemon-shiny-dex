@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.utils.text import slugify
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.views import View
+from django.views import View, generic
 from django.template.response import TemplateResponse
 from .models import Game, Pokeball, Pokemon, UserShiny
 from .forms import *
@@ -232,3 +232,14 @@ class UserShinyDelete(View):
 
         messages.warning(request, 'Shiny Deleted!')
         return redirect(reverse('addshiny', args=[request.user]))
+
+
+class UserShinyDex(generic.ListView):
+    model = UserShiny
+    context_object_name = 'pokemon_list'
+    # queryset = UserShiny.objects.filter(user=request.user)
+    template_name = 'userdex.html'
+
+    def get_queryset(self):
+        self.user = get_object_or_404(User, username=self.kwargs['user'])
+        return UserShiny.objects.filter(user=self.user)

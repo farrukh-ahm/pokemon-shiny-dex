@@ -13,5 +13,6 @@ urlpatterns = [
     path('manage/deletepokemon/<slug:slug>', views.ManagePokemonDelete.as_view(), name='deletepokemon'),
     path('add_shiny/<str:user>', views.UserShinyView.as_view(), name='addshiny'),
     path('add_shiny/edit/<str:user>/<slug:slug>', views.UserShinyEdit.as_view(), name='editshiny'),
-    path('delete/<str:user>/<slug:slug>', views.UserShinyDelete.as_view(), name='deleteShiny')
+    path('delete/<str:user>/<slug:slug>', views.UserShinyDelete.as_view(), name='deleteShiny'),
+    path('userdex/<str:user>', views.UserShinyDex.as_view(), name='userdex'),
 ]
