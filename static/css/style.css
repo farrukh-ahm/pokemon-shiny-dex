@@ -92,7 +92,7 @@ h1,h2,h3,h4{
     font-family: var(--header-font);
     text-align: center;
     cursor: pointer;
-    transition: all 0.4s ease-in-out;
+    /* transition: all 0.4s ease-in-out; */
 }
 
 .btn:hover{
@@ -127,6 +127,7 @@ h2{
 
 form {
     color: var(--header-color);
+    line-height: 2em;
     /* background-color: #74aad6; */
 }
 
@@ -158,6 +159,7 @@ select{
     cursor: pointer;
     padding-inline-start: 3px;
     padding-inline-end: 2px;
+    margin-inline-start: 1em;
     /* box-shadow: none;
     outline: none; */
     background: transparent;
@@ -582,4 +584,8 @@ dialog button {
 
 i {
     color: var(--header-color)
+}
+
+.user-shiny-delete-modal{
+    text-align: center;
 }
