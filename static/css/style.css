@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400&family=Playfair+Display:wght@400;500&family=Tektur:wght@400;500&display=swap');
 
 *, *::after, *::before{
     padding: 0;
@@ -11,9 +11,9 @@ html, body{
 }
 
 :root{
-    --body-font: 'Varela Round', sans-serif;
-    --header-font: 'Dancing Script', cursive;
-    --title: 'Caveat', cursive;
+    --body-font: 'Dosis', sans-serif;
+    --header-font: 'Tektur', cursive;
+    --title: 'Playfair Display', serif;
     --body-color: #000000;
     --body-gradiet: linear-gradient(to right, #212123, #252527, #28292a, #2c2d2e, #303132, #333435, #363739, #393a3c, #3d3d40, #404043, #444447, #48474a);;
     --banner-color: #B54936;
@@ -87,7 +87,7 @@ h1,h2,h3,h4{
     block-size: 2rem;
     background: none;
     border: 1px solid var(--banner-color);
-    border-radius: 2px;
+    border-radius: 5px;
     color: var(--button-color);
     font-family: var(--header-font);
     text-align: center;
@@ -170,9 +170,13 @@ option{
 }
 
 .form-handle {
-    outline: 1px solid var(--banner-color);
-    outline-offset: 8px;
+    /* outline: 1px solid var(--banner-color);
+    outline-offset: 8px; */
+    border: 1px solid var(--banner-color);
+    padding: 1em;
+    border-radius: 5px;
     margin-block: 2em;
+    box-shadow: 0 0 5px var(--banner-color);
 }
 
 small {
@@ -194,7 +198,7 @@ small {
 }
 
 .success, .info, .debug{
-    background-color: #C6E4F0;
+    background-color: #a2f5c7;
     padding-inline: 1em;
 }
 
