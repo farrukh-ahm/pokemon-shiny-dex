@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-    <title>Document</title>
+    <title>Shiny Pokedex</title>
 </head>
 <body>
     <header id="header">
@@ -45,6 +45,12 @@
             {% endfor %}
         
         </div>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+
+        <div class="user_name_container"><p>Welcome {{ user.get_username }}</p></div>
+
     {% endif %}
 
     {% block content %}

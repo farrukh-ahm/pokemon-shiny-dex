@@ -296,11 +296,27 @@ dialog button {
     /* background-color: #6a548d; */
 }
 
+/* .nav > li{
+    transition: all 0.5s ease-out;
+}
+
+.nav > li:hover{
+    color: var(--header-color);
+} */
+
+
 .nav > li a{
     text-decoration: none;
     letter-spacing: .15em;
     font-family: var(--title);
     color: var(--text-color);
+    transition: all 0.25s ease-out;
+}
+
+.nav > li a:hover{
+    color: var(--header-color);
+    border-bottom: 1px solid var(--header-color);
+    filter: drop-shadow(0 0 1px var(--header-color));
 }
 
 #nav-toggle{
@@ -346,6 +362,15 @@ dialog button {
     .toggle{
         inset: 0 0 0 30%;
     }
+}
+
+.user_name_container{
+    inline-size: 100%;
+    /* block-size: 5rem; */
+    color: var(--header-color);
+    text-align: center;
+    padding-block: 0.5em;
+    /* background-color: pink; */
 }
 
 /* ----------------------------------- */
@@ -484,9 +509,14 @@ dialog button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding-inline: 1rem;
-    outline: 1px solid var(--banner-color);
-    outline-offset: 5px;
+    padding: 1.5rem;
+    border: 1px solid var(--banner-color);
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--banner-color);
+    /* outline: 1px solid var(--banner-color);
+    outline-offset: 5px; */
+    /* min-inline-size: 40%;
+    justify-items: center; */
     /* background-color: pink; */
 }
 
