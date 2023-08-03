@@ -4,6 +4,7 @@ let navToggle = document.getElementById("nav-toggle")
 let navBar = document.getElementsByClassName("nav")
 
 navToggle.addEventListener("click", ()=>{
+    document.querySelector(".burger-container").classList.toggle("burger-toggle")
     for(let nav of navBar){
         nav.classList.toggle("toggle")
         console.log("click")

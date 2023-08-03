@@ -325,9 +325,51 @@ dialog button {
     position: absolute;
     top: 2rem;
     right: 2rem;
-    background-color: #90e9b5;
+    border: none;
+    background: transparent;
+    /* background-color: #90e9b5; */
     z-index: 9999;
     display: none;
+}
+
+.burger-container{
+    inline-size: 100%;
+    block-size: 100%;
+    text-align: center;
+    padding-block: 0.5em;
+    /* position: relative; */
+    /* background-color: #f5851c; */
+}
+
+.burger-lines{
+    inline-size: 80%;
+    block-size: 0.25em;
+    margin: 2px auto;
+    background-color: var(--header-color);
+    /* position: absolute; */
+    transition: all 0.5s ease-in-out;
+}
+
+.burger-toggle{
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
+}
+
+.burger-toggle > div:first-child{
+    /* top: 50%; */
+    transform: translateY(4px);
+    transition-delay: 0.2s;
+}
+
+.burger-toggle > div:nth-child(2){
+    transform: scale(0, 1)
+}
+
+.burger-toggle > div:last-child{
+    /* bottom: 50%; */
+    transform: translateY(-6px) rotate(90deg);
+    transition-delay: 0.2s;
 }
 
 @media (max-width: 800px){
@@ -335,7 +377,7 @@ dialog button {
         position: absolute;
         left: 50%;
         top: 75%;
-        transform: translateX(-35%);
+        transform: translateX(-50%);
 
     }
 }
