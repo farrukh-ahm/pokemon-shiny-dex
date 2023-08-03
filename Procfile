@@ -1,1 +1,1 @@
-web: gunicorn shiny_database.wsgi
+web: gunicorn shiny_database.wsgi --log-file -
