@@ -22,15 +22,15 @@ class Dex(View):
         return render(request, 'dex.html')
 
 
-class Profile(View):
+# class Profile(View):
 
-    def get(self, request, *args, **kwargs):
-        queryset = User.objects.all()
-        profile = get_object_or_404(queryset, username=request.user)
-        context = {
-            'profile': profile,
-        }
-        return render(request, 'profile.html', context)
+#     def get(self, request, *args, **kwargs):
+#         queryset = User.objects.all()
+#         profile = get_object_or_404(queryset, username=request.user)
+#         context = {
+#             'profile': profile,
+#         }
+#         return render(request, 'profile.html', context)
 
 
 class Manage(View):
@@ -243,3 +243,22 @@ class UserShinyDex(generic.ListView):
     def get_queryset(self):
         self.user = get_object_or_404(User, username=self.kwargs['user'])
         return UserShiny.objects.filter(user=self.user)
+
+
+class Profile(View):
+    
+    def get(self, request, *args, **kwargs):
+        queryset = User.objects.all()
+        user = get_object_or_404(queryset, username=request.user)
+
+        try:
+            user_shiny = UserShiny.objects.filter(username=request.user)
+        except:
+            user_shiny = 0
+
+        context = {
+            'user': user,
+            'user_shiny': user_shiny 
+        }
+
+        return render(request, 'profile.html', context)

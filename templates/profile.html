@@ -2,9 +2,19 @@
 
 {% block content %}
 
-    <div style="color: aliceblue;">{{profile.username}}</div> 
-    <div style="color:aquamarine">{{profile.password}}</div>
-
+    <div style="color: aliceblue;">{{user.username}}</div> 
+    <div style="color:aquamarine">{{user.password}}</div>
+    {% if user_shiny.count %}
+    <div style="color:aquamarine">{{user_shiny|length}}</div>
+    {% else %}
+    <div style="color:aquamarine">{{user_shiny}}</div>
+    {% endif %}
+    {% if user.email %}
+    <div style="color:aquamarine">{{user.email}}</div>
+    {% else %}
+    <div style="color:aquamarine">None</div>
+    {% endif %}
     <a href="{% url 'account_change_password' %}" style="color:beige">Change Password</a>
+    <a href="{% url 'account_email' %}" style="color:beige">Change Email</a>
 
 {% endblock %}

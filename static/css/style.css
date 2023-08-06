@@ -479,14 +479,6 @@ dialog button {
 @keyframes poke-glow{
     0%{filter: drop-shadow(0 0 5px var(--card-odd))}
 
-    /* 20%{filter: drop-shadow(0 0 6px var(--card-even))} */
-
-    /* 40%{filter: drop-shadow(0 0 7px var(--card-even))} */
-
-    /* 60%{filter: drop-shadow(0 0 8px var(--card-even))} */
-
-    /* 80%{filter: drop-shadow(0 0 9px var(--card-odd))} */
-
     100%{filter: drop-shadow(0 0 5px var(--card-even))}
 }
 
@@ -519,11 +511,6 @@ dialog button {
     padding-inline-start: 0.5em;
     /* background-color: #6a548d; */
 }
-
-/* .info-holder>p span{
-    inline-size: 100%;
-    background-color: #6a548d;
-} */
 
 .info-holder>p{
     inline-size: 100%;
@@ -565,11 +552,6 @@ dialog button {
 .grid-log  p{
     color: var(--header-color);
 }
-
-/* .grid-log  form {
-    color: var(--text-color);
-    background-color: #74aad6;
-} */
 
 :is(.grid-log) input{
     margin: 1em 0;
@@ -664,4 +646,16 @@ i {
 
 .user-shiny-delete-modal{
     text-align: center;
+}
+
+.no-record{
+    inline-size: 100%;
+    block-size: 5rem;
+    color: var(--header-color);
+    text-align: center;
+    font-size: large;
+}
+
+.no-record p {
+    margin: auto;
 }
