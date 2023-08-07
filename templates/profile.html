@@ -2,19 +2,26 @@
 
 {% block content %}
 
-    <div style="color: aliceblue;">{{user.username}}</div> 
-    <div style="color:aquamarine">{{user.password}}</div>
-    {% if user_shiny.count %}
-    <div style="color:aquamarine">{{user_shiny|length}}</div>
-    {% else %}
-    <div style="color:aquamarine">{{user_shiny}}</div>
-    {% endif %}
-    {% if user.email %}
-    <div style="color:aquamarine">{{user.email}}</div>
-    {% else %}
-    <div style="color:aquamarine">None</div>
-    {% endif %}
-    <a href="{% url 'account_change_password' %}" style="color:beige">Change Password</a>
-    <a href="{% url 'account_email' %}" style="color:beige">Change Email</a>
+    <div class="grid-wrapper grid-log">
+        <h2>Profile</h2>
+        <p class="flex-wrapper">
+            <span class="category">Username:</span><span class="info-p">{{user.username}}</span>
+        </p>
+        <p class="flex-wrapper">
+            <span class="category">Provided Email:</span><span class="info-p">{{user.email}}</span>
+        </p>
+        {% if user_shiny.count %}
+            <p class="flex-wrapper">
+                <span class="category">Shiny Count:</span><span class="info-p">{{user_shiny.count}}/1015</span>
+            </p>
+        {% else %}
+            <p class="flex-wrapper">
+                <span class="category">Shiny Count:</span><span class="info-p">{{user_shiny}}</span>
+            </p>
+        {% endif %}
+        <a href="{% url 'account_change_password' %}"><button class="btn btn-padding">Change Password</button></a>
+        <a href="{% url 'account_email' %}"><button class="btn btn-padding">Change Email</button></a>
+    </div>
+    
 
 {% endblock %}

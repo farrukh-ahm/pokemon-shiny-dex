@@ -11,6 +11,13 @@ navToggle.addEventListener("click", ()=>{
     }
 })
 
+const test = document.querySelector("#selector")
+const countMons = parseInt(test.getAttribute("data-count"))
+let bar = document.getElementById("bar")
+bar.style.width = `${countMons}%`
+console.log(bar)
+bar.style.backgroundColor= "red"
+
 
 // MESSAGE TIMEOUT
 
@@ -82,3 +89,4 @@ for(let btn of deleteModalOpen){
 deleteModalClose.addEventListener("click", ()=>{
     deleteModal.close()
 })
+

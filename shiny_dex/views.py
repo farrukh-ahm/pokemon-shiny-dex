@@ -252,13 +252,14 @@ class Profile(View):
         user = get_object_or_404(queryset, username=request.user)
 
         try:
-            user_shiny = UserShiny.objects.filter(username=request.user)
+            queryset_two = UserShiny.objects.all()
+            user_shiny = queryset_two.filter(user=request.user)
         except:
             user_shiny = 0
 
         context = {
             'user': user,
-            'user_shiny': user_shiny 
+            'user_shiny': user_shiny,
         }
 
         return render(request, 'profile.html', context)

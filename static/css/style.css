@@ -99,6 +99,10 @@ h1,h2,h3,h4{
     box-shadow: 0 0 6px var(--banner-color), inset 0 0 4px var(--banner-color);
 }
 
+.btn-padding{
+    padding-inline: 1em;
+}
+
 #header{
     inline-size: 100%;
     block-size: 6.25rem;
@@ -658,4 +662,20 @@ i {
 
 .no-record p {
     margin: auto;
+}
+
+
+.bar-container{
+    block-size: 2em;
+    inline-size: 80%;
+    background-color: var(--header-color);
+    margin: 2rem auto;
+    border-radius: 20px;
+}
+
+#bar{
+    block-size: 100%;
+    border-radius: 20px;
+    /* inline-size: 5rem; */
+    /* background-color: #000000; */
 }

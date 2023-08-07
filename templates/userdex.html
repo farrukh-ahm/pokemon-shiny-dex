@@ -3,7 +3,10 @@
 {% block content %}
 
     <h2 id="dex-header">Shiny Dex</h2>
-    <div class="grid-wrapper grid-auto">
+    <div class="bar-container">
+        <div id="bar"></div>
+    </div>
+    <div id="selector" class="grid-wrapper grid-auto" data-count="{{pokemon_list.count}}">
         {% for mon in pokemon_list %}
         
             <div class="cards flex-wrapper col-felx">
