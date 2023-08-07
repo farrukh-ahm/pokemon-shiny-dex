@@ -669,6 +669,7 @@ i {
     block-size: 2em;
     inline-size: 80%;
     background-color: var(--header-color);
+    backdrop-filter: blur(30px);
     margin: 2rem auto;
     border-radius: 20px;
 }
@@ -676,6 +677,14 @@ i {
 #bar{
     block-size: 100%;
     border-radius: 20px;
+    background-image: linear-gradient(to right, #ec2753, #ee3057, #f1375c, #f33e60, #f54565, #f8546e, #fa6178, #fc6d81, #fe8291, #ff96a1, #ffa9b2, #ffbcc2);
+    background-size: 200%;
+    animation: bar 20s infinite alternate;
     /* inline-size: 5rem; */
     /* background-color: #000000; */
+}
+
+@keyframes bar{
+    0%{background-position: right;}
+    100%{background-position: left;}
 }
