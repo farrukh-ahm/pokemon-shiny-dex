@@ -11,11 +11,15 @@ navToggle.addEventListener("click", ()=>{
     }
 })
 
-const test = document.querySelector("#selector")
-const countMons = parseInt(test.getAttribute("data-count"))
-let bar = document.getElementById("bar")
-bar.style.width = `${countMons}%`
-console.log(bar)
+let selector
+let countMons
+let bar
+selector = document.querySelector("#selector")
+if(selector){
+    countMons = parseInt(selector.getAttribute("data-count"))
+    bar = document.getElementById("bar")
+    bar.style.width = `${countMons}%`
+}
 
 
 // MESSAGE TIMEOUT
@@ -47,6 +51,7 @@ const modal1Close = document.getElementsByClassName("modal1-close")
 
 for(let modal of modal1Open){
     modal.addEventListener("click", (e)=>{
+        console.log("click")
         let slug = e.target.getAttribute("data-type")
         delModal.showModal();
         addSlug.setAttribute("action", `deletepokemon/${slug}`)
