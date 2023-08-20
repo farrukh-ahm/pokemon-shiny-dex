@@ -6,6 +6,7 @@ from django.views import View, generic
 from django.template.response import TemplateResponse
 from .models import Game, Pokeball, Pokemon, UserShiny
 from .forms import *
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -263,3 +264,24 @@ class Profile(View):
         }
 
         return render(request, 'profile.html', context)
+
+
+class ExampleDex(View):
+
+    def get(self, request, username, *args, **kwargs):
+        print("HERE IS THE PRINT")
+        try:
+            user_name = User.objects.get(username=username)
+        except User.DoesNotExist:
+            return HttpResponse("User not found")
+        user_queryset = User.objects.all()
+        user = get_object_or_404(user_queryset, username=user_name)
+        
+        queryset = UserShiny.objects.all()
+        usershiny = queryset.filter(user=user.id)
+        context = {
+            'usershiny': usershiny,
+            'user_name': user_name
+        }
+
+        return render(request, 'exampledex.html', context)

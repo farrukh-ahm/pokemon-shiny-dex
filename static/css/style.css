@@ -26,7 +26,6 @@ html, body{
 }
 
 body{
-    /* background-color: var(--body-color); */
     background-image: var(--body-gradiet);
     overflow-x: hidden;
     font-family: var(--body-font);
@@ -54,7 +53,6 @@ body{
 .grid-wrapper{
     display: grid;
     gap: var(--gaps, 1rem);
-    /* align-items: center; */
     place-content: center;
 }
 
@@ -92,7 +90,6 @@ h1,h2,h3,h4{
     font-family: var(--header-font);
     text-align: center;
     cursor: pointer;
-    /* transition: all 0.4s ease-in-out; */
 }
 
 .btn:hover{
@@ -132,7 +129,6 @@ h2{
 form {
     color: var(--header-color);
     line-height: 2em;
-    /* background-color: #74aad6; */
 }
 
 form label {
@@ -164,8 +160,6 @@ select{
     padding-inline-start: 3px;
     padding-inline-end: 2px;
     margin-inline-start: 1em;
-    /* box-shadow: none;
-    outline: none; */
     background: transparent;
 }
 
@@ -174,8 +168,6 @@ option{
 }
 
 .form-handle {
-    /* outline: 1px solid var(--banner-color);
-    outline-offset: 8px; */
     border: 1px solid var(--banner-color);
     padding: 1em;
     border-radius: 5px;
@@ -246,12 +238,10 @@ dialog button {
     block-size: 3.75rem;
     border-radius: 50%;
     border: 2px solid var(--body-color);
-    /* filter: drop-shadow(0 0 3px var(--banner-color)); */
     box-shadow: 0 0 5px white, inset 0 0 3px white;
     float: left;
     position: relative;
     animation: glow 5s linear alternate infinite;
-    /* text-align: center; */
 }
 
 @keyframes glow{
@@ -297,16 +287,7 @@ dialog button {
     transform: translate(-10%, -50%);
     list-style: none;
     --gap: 1em;
-    /* background-color: #6a548d; */
 }
-
-/* .nav > li{
-    transition: all 0.5s ease-out;
-}
-
-.nav > li:hover{
-    color: var(--header-color);
-} */
 
 
 .nav > li a{
@@ -331,7 +312,6 @@ dialog button {
     right: 2rem;
     border: none;
     background: transparent;
-    /* background-color: #90e9b5; */
     z-index: 9999;
     display: none;
 }
@@ -341,8 +321,6 @@ dialog button {
     block-size: 100%;
     text-align: center;
     padding-block: 0.5em;
-    /* position: relative; */
-    /* background-color: #f5851c; */
 }
 
 .burger-lines{
@@ -350,7 +328,6 @@ dialog button {
     block-size: 0.25em;
     margin: 2px auto;
     background-color: var(--header-color);
-    /* position: absolute; */
     transition: all 0.5s ease-in-out;
 }
 
@@ -361,7 +338,6 @@ dialog button {
 }
 
 .burger-toggle > div:first-child{
-    /* top: 50%; */
     transform: translateY(4px);
     transition-delay: 0.2s;
 }
@@ -371,7 +347,6 @@ dialog button {
 }
 
 .burger-toggle > div:last-child{
-    /* bottom: 50%; */
     transform: translateY(-6px) rotate(90deg);
     transition-delay: 0.2s;
 }
@@ -412,11 +387,9 @@ dialog button {
 
 .user_name_container{
     inline-size: 100%;
-    /* block-size: 5rem; */
     color: var(--header-color);
     text-align: center;
     padding-block: 0.5em;
-    /* background-color: pink; */
 }
 
 /* ----------------------------------- */
@@ -428,8 +401,7 @@ dialog button {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
-    /* background-color: #6a548d; */
+    transform: translate(-50%, -50%);
 }
 
 #index-container>div{
@@ -442,6 +414,32 @@ dialog button {
     text-transform: uppercase;
 }
 
+#ex-dex{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.example{
+    text-decoration: none;
+    color: var(--header-color);
+    transition: all 0.2s ease-in;
+}
+
+.example:hover{
+    border-bottom: 1px solid var(--header-color);
+    scale: 1.1;
+}
+
+@media (max-width: 500px){
+    .extra-flex{
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-block-start: 2rem;
+    }
+}
+
 
 /* --------------------------------- */
 /* ---------- DEX PAGE ------------ */
@@ -452,7 +450,6 @@ dialog button {
 .cards{
     inline-size: 17.5rem;
     min-block-size: 22.5rem;
-    /* clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 0 100%, 0 25%); */
     margin: auto;
     margin-block-end: 1rem;
     border: 1px solid var(--card-odd);
@@ -461,6 +458,11 @@ dialog button {
     overflow-y: hidden;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    transition: all 0.2s ease-in;
+}
+
+.cards:hover{
+    scale: 1.1;
 }
 
 .cards:nth-child(even){
@@ -470,14 +472,12 @@ dialog button {
 .cards img{
     inline-size: 50%;
     aspect-ratio: 1;
-    /* block-size: 60%; */
     position: absolute;
     top: 5%;
     left: 50%;
     transform: translateX(-50%);
     filter: drop-shadow(0 0 5px var(--card-odd));
     animation: poke-glow 2s alternate infinite;
-    /* background-color: #1CB8F5; */
 }
 
 @keyframes poke-glow{
@@ -496,7 +496,6 @@ dialog button {
     transform: translateY(-50%);
     border: 1px solid var(--banner-color);
     box-shadow: 0 0 2px var(--banner-color);
-    /* background-color: var(--banner-color); */
     gap: 0.5rem;
 }
 
@@ -513,13 +512,11 @@ dialog button {
     left:0;
     bottom:1.5em;
     padding-inline-start: 0.5em;
-    /* background-color: #6a548d; */
 }
 
 .info-holder>p{
     inline-size: 100%;
     --gap: 0.5em;
-    /* background-color: #74aad6; */
 }
 
 .category{
@@ -546,11 +543,6 @@ dialog button {
     border: 1px solid var(--banner-color);
     border-radius: 5px;
     box-shadow: 0 0 5px var(--banner-color);
-    /* outline: 1px solid var(--banner-color);
-    outline-offset: 5px; */
-    /* min-inline-size: 40%;
-    justify-items: center; */
-    /* background-color: pink; */
 }
 
 .grid-log  p{
@@ -578,12 +570,8 @@ dialog button {
     display: flex;
     justify-content: flex-end;
     padding-inline: 1em;
-    /* background-color: #6a548d; */
 }
 
-/* .pokemon-form-btn{
-    background-color: #90e9b5 !important;
-} */
 
 @media (max-width: 500px) {
     
@@ -600,13 +588,11 @@ dialog button {
     left:0;
     bottom:25%;
     padding-inline-start: 0.5em;
-    /* background-color: #6a548d; */
 }
 
 .info-holder-manage>p{
     inline-size: 100%;
     --gap: 0.5em;
-    /* background-color: #74aad6; */
 }
 
 .p-edit-div {
@@ -629,7 +615,6 @@ dialog button {
 .btn-dex {
     min-inline-size: 2.5rem;
     aspect-ratio: 1;
-    /* block-size: 2rem; */
     background: none;
     border: 1px solid var(--banner-color);
     border-radius: 50%;
@@ -668,8 +653,7 @@ i {
 .bar-container{
     block-size: 2em;
     inline-size: 80%;
-    background-color: var(--header-color);
-    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.5);
     margin: 2rem auto;
     border-radius: 20px;
 }
@@ -680,8 +664,6 @@ i {
     background-image: linear-gradient(to right, #ec2753, #ee3057, #f1375c, #f33e60, #f54565, #f8546e, #fa6178, #fc6d81, #fe8291, #ff96a1, #ffa9b2, #ffbcc2);
     background-size: 200%;
     animation: bar 20s infinite alternate;
-    /* inline-size: 5rem; */
-    /* background-color: #000000; */
 }
 
 @keyframes bar{

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2 id="dex-header">{{user_name}}'s Shiny Dex</h2>
+    
+    <div id="selector" class="grid-wrapper grid-auto">
+
+        {% for shiny in usershiny %}
+            
+            <div class="cards flex-wrapper col-felx">
+                <img src="{{shiny.pokemon.featured_image.url}}" alt="#" data-type="#">
+                <div class="name-tag flex-wrapper flex-center">
+                    <span>#{{shiny.pokemon.dex_no}} :</span>
+                    <span>{{shiny.pokemon.name}}</span>
+                </div>
+                <div class="flex-wrapper info-holder col-flex">
+                    <p class="flex-wrapper">
+                        <span class="category">Nickname:</span><span class="info-p">{{shiny.nick_name}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Gender:</span><span class="info-p">{{shiny.get_gender_display}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Caught On:</span><span class="info-p">{{shiny.caught_on}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Pokeball used:</span><span class="info-p">{{shiny.pokeball.pokeball_type}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Encounters:</span><span class="info-p">{{shiny.encounters}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Game:</span><span class="info-p">{{shiny.game.game_version}}</span>
+                    </p>
+                    <p class="flex-wrapper">
+                        <span class="category">Method:</span><span class="info-p">{{shiny.method}}</span>
+                    </p>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

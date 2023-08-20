@@ -14,4 +14,5 @@ urlpatterns = [
     path('add_shiny/edit/<str:user>/<slug:slug>', views.UserShinyEdit.as_view(), name='editshiny'),
     path('delete/<str:user>/<slug:slug>', views.UserShinyDelete.as_view(), name='deleteShiny'),
     path('userdex/<str:user>', views.UserShinyDex.as_view(), name='userdex'),
+    path('exampledex/<str:username>', views.ExampleDex.as_view(), name='exampledex'),
 ]

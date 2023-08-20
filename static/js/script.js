@@ -13,12 +13,15 @@ navToggle.addEventListener("click", ()=>{
 
 let selector
 let countMons
+let barSize
 let bar
 selector = document.querySelector("#selector")
 if(selector){
-    countMons = parseInt(selector.getAttribute("data-count"))
+    countMons = parseInt(selector.getAttribute("data-count"));
+    barSize = Math.round(countMons/1008*100)
     bar = document.getElementById("bar")
-    bar.style.width = `${countMons}%`
+    bar.style.width = `${barSize}%`
+    console.log(countMons/1008*100)
 }
 
 
@@ -38,16 +41,6 @@ const addSlug = document.querySelector(".add-slug")
 const modal1Open = document.getElementsByClassName("modal1-open")
 const delConfirm = document.querySelector(".del-confirm")
 const modal1Close = document.getElementsByClassName("modal1-close")
-
-// function openCheck(dialog) {
-//     if (dialog.open) {
-//       console.log("Dialog open");
-//     } else {
-//       console.log("Dialog closed");
-//     }
-//   }
-
-//   document.addEventListener("DOMContentLoaded", openCheck)
 
 for(let modal of modal1Open){
     modal.addEventListener("click", (e)=>{

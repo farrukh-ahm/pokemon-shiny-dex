@@ -8,9 +8,18 @@
         <div class="flex-wrapper flex-center">
             <a href="{% url 'userdex' request.user %}"><button class="btn">Dex</button></a>
             <a href="{% url 'addshiny' request.user %}"><button class="btn">Add/Edit</button></a>
-            <button class="btn">Search</button>
+            <!-- <button class="btn">Search</button> -->
         </div>
     {% endif %}
+
+</div>
+<div id="ex-dex" class="flex-wrapper flex-center extra-flex">
+    <p>Check out these dex:</p>
+    <a class="example" href="{% url 'exampledex' 'gandalf' %}">Gandalf</a>
+    <a class="example" href="{% url 'exampledex' 'fdarkangel' %}">fDarkAngel</a>
+    <a class="example" href="{% url 'exampledex' 'harrypotter' %}">Harry Potter</a>
+    <a class="example" href="{% url 'exampledex' 'voldemort' %}">Voldemort</a>
+    
 </div>
 
 {% endblock %}
