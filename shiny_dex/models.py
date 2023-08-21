@@ -49,5 +49,8 @@ class UserShiny(models.Model):
     caught_on = models.DateField(null=True)
     method = models.CharField(max_length=50)
 
+    class Meta:
+        ordering = ['pokemon__dex_no']
+
     def __str__(self):
         return f'{self.pokemon}: {self.game}, {self.encounters}'
