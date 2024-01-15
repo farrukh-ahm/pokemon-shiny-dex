@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['shiny-dex.up.railway.app']
+ALLOWED_HOSTS = ['https://shiny-dex.up.railway.app/']
 
 
 # Application definition
