@@ -57,7 +57,7 @@
     <div class="grid-wrapper grid-auto">
         {% for pokemon in pokemons %}
             <div class="cards flex-wrapper col-flex">
-                <img src="{{pokemon.featured_image.url}}" alt="{{pokemon.name}}" data-type="{{pokemon.type_1}}">
+                <img src="{{pokemon.featured_image.url}}" alt="{{pokemon.name}}" data-type="{{pokemon.type_1}}" loading="lazy">
                 <div class="name-tag flex-wrapper flex-center">
                     <span>#{{pokemon.dex_no}} :</span>
                     <span>{{pokemon.name}}</span>

@@ -4,40 +4,36 @@
 
     <h2 id="dex-header">{{user_name}}'s Shiny Dex</h2>
     
-    <div id="selector" class="grid-wrapper grid-auto">
+    <div class="grid-wrapper grid-auto">
 
-        {% for shiny in usershiny %}
+        {% for mon in usershiny %}
             
-            <div class="cards flex-wrapper col-felx">
-                <img src="{{shiny.pokemon.featured_image.url}}" alt="#" data-type="#">
-                <div class="name-tag flex-wrapper flex-center">
-                    <span>#{{shiny.pokemon.dex_no}} :</span>
-                    <span>{{shiny.pokemon.name}}</span>
+        <div class="perspective-div">
+
+            <div class="card-holder">
+                
+                <div class="cards-front flex-wrapper col-flex flex-center">
+                    <img src="{{mon.pokemon.featured_image.url}}" alt="{{mon.pokemon.name}}" data-type="{{mon.pokemon.type_1}}" loading="lazy">
+                    <h2>{{mon.pokemon.name}}</h2>
                 </div>
-                <div class="flex-wrapper info-holder col-flex">
-                    <p class="flex-wrapper">
-                        <span class="category">Nickname:</span><span class="info-p">{{shiny.nick_name}}</span>
-                    </p>
-                    <p class="flex-wrapper">
-                        <span class="category">Gender:</span><span class="info-p">{{shiny.get_gender_display}}</span>
-                    </p>
-                    <p class="flex-wrapper">
-                        <span class="category">Caught On:</span><span class="info-p">{{shiny.caught_on}}</span>
-                    </p>
-                    <p class="flex-wrapper">
-                        <span class="category">Pokeball used:</span><span class="info-p">{{shiny.pokeball.pokeball_type}}</span>
-                    </p>
-                    <p class="flex-wrapper">
-                        <span class="category">Encounters:</span><span class="info-p">{{shiny.encounters}}</span>
-                    </p>
-                    <p class="flex-wrapper">
-                        <span class="category">Game:</span><span class="info-p">{{shiny.game.game_version}}</span>
-                    </p>
-                    <p class="flex-wrapper">
-                        <span class="category">Method:</span><span class="info-p">{{shiny.method}}</span>
-                    </p>
+
+
+                <div class="cards-back">
+
+                    <p>#{{mon.pokemon.dex_no}} {{mon.pokemon.name}}</p>
+                    <p>Nick Name: {{mon.nick_name}}</p>
+                    <p>Gneder: {{mon.get_gender_display}}</p>
+                    <p>Caught On: {{mon.caught_on}}</p>
+                    <p>Pokeball: {{mon.pokeball.pokeball_type}}</p>
+                    <p>Encounters: {{mon.encounters}}</p>
+                    <p>Game: {{mon.game.game_version}}</p>
+                    <p>Method: {{mon.method}}</p>
+
                 </div>
+
             </div>
+
+        </div>
 
         {% endfor %}
     </div>
