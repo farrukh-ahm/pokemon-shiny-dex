@@ -14,11 +14,12 @@ Shiny Hunting is a big part of Pokemon Community, where "hunters" spend days and
 
 
 ### Dex Page
-![Dexpage](./media/images/dexpage.JPG)
+![Dexpage](./media/images/dex-front.PNG)
+![Dexpage-Back](./media/images/dex-back.PNG)
 
 
 ### Add/Edit Page
-![Add/Edit](./media/images/add.JPG)
+![Add/Edit](./media/images/add.PNG)
 
 ### Technology Used:
 - HTML/CSS
