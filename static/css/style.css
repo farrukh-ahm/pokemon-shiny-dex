@@ -477,17 +477,21 @@ dialog button {
     margin: auto;
     margin-block-end: 1rem;
     position: relative;
-    /* perspective: var(--perspective); */
-    /* transform: rotateY(20deg); */
     transform-style: preserve-3d;
     transform-origin: center;
     transition: all 1s linear;
     cursor: pointer;
-    /* background-color: white; */
-    /* transform: rotateY(80deg);     */
-    /* transform: rotateY(180deg); */
+    box-shadow: 
+    -7px -7px 10px -5px transparent, 
+    7px 7px 10px -5px transparent, 
+    0 0 5px 0px rgba(255,255,255,0),
+    0 55px 35px -20px rgba(0, 0, 0, 0.5);
 
 }
+
+/* .card-holder:hover{
+    transform: rotateX(-10deg);
+} */
 
 
 .rotate {
@@ -507,11 +511,16 @@ dialog button {
     min-block-size: 22.5rem;
     margin: auto; */
     /* margin-block-end: 1rem; */
-    border: 1px solid #FF3131;
+    border: 1px solid #fff;
     border-radius: 1em;
     transform: translateZ(10px);
     transform-style: preserve-3d;
-    background-image: linear-gradient(to bottom, var(--card-color-1-), var(--card-color-2-));
+    background: rgba(238, 238, 228, 0.9);
+    background-image: url("../images/sparkle.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    /* mix-blend-mode: color-dodge; */
     /* backdrop-filter: blur(5px); */
     /* background-color: var(--body-gradiet); */
     /* background-color: plum; */
@@ -525,7 +534,7 @@ dialog button {
 
 .cards-front > img {
 
-    max-block-size: 6em;
+    max-block-size: 8em;
     /* aspect-ratio: 1.5; */
     transform: translateZ(50px);
     /* background-color: red; */
