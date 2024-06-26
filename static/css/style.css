@@ -299,13 +299,13 @@ dialog button {
     letter-spacing: .15em;
     font-family: var(--title);
     color: var(--text-color);
-    transition: all 0.25s ease-out;
+    /* transition: all 0.25s ease-out; */
 }
 
 .nav > li a:hover{
     color: var(--header-color);
     border-bottom: 1px solid var(--header-color);
-    filter: drop-shadow(0 0 1px var(--header-color));
+    /* filter: drop-shadow(0 0 1px var(--header-color)); */
 }
 
 #nav-toggle{
@@ -425,6 +425,10 @@ dialog button {
     transform: translate(-50%, -50%);
 }
 
+#ex-dex p {
+    color: var(--banner-color)
+}
+
 .example{
     text-decoration: none;
     color: var(--header-color);
@@ -432,8 +436,9 @@ dialog button {
 }
 
 .example:hover{
-    border-bottom: 1px solid var(--header-color);
-    scale: 1.1;
+    border-bottom: 1px solid var(--banner-color);
+    color: var(--banner-color);
+    /* scale: 1.1; */
 }
 
 @media (max-width: 500px){
@@ -607,8 +612,9 @@ dialog button {
 
 .cards img{
     max-block-size: 7em;
-    /* inline-size: 50%;
-    aspect-ratio: 1; */
+    max-inline-size: 12em;
+    /* inline-size: 50%; */
+    /* aspect-ratio: 1; */
     position: absolute;
     top: 5%;
     left: 50%;
