@@ -438,7 +438,6 @@ dialog button {
 .example:hover{
     /* border-bottom: 1px solid var(--banner-color); */
     color: var(--banner-color);
-    /* scale: 1.1; */
 }
 
 @media (max-width: 500px){
