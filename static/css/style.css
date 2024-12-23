@@ -436,7 +436,7 @@ dialog button {
 }
 
 .example:hover{
-    border-bottom: 1px solid var(--banner-color);
+    /* border-bottom: 1px solid var(--banner-color); */
     color: var(--banner-color);
     /* scale: 1.1; */
 }
@@ -520,8 +520,8 @@ dialog button {
     border-radius: 1em;
     transform: translateZ(10px);
     transform-style: preserve-3d;
-    background: rgba(238, 238, 228, 0.9);
-    background-image: url("../images/sparkle.gif");
+    background: rgba(238, 238, 228, 0.4);
+    background-image: url("../images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: overlay;
@@ -539,7 +539,7 @@ dialog button {
 
 .cards-front > img {
 
-    max-block-size: 8em;
+    max-block-size: 10em;
     /* aspect-ratio: 1.5; */
     transform: translateZ(50px);
     /* background-color: red; */
