@@ -355,13 +355,14 @@ dialog button {
     transition-delay: 0.2s;
 }
 
-@media (max-width: 800px){
+@media (max-width: 1050px){
     .nav{
         position: absolute;
         left: 50%;
         top: 75%;
         transform: translateX(-50%);
-
+        min-inline-size: 70%;
+        place-content: center;
     }
 }
 
@@ -423,6 +424,12 @@ dialog button {
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@media (max-width:880px){
+    #ex-dex{
+        inline-size: 100vw;
+    }
 }
 
 #ex-dex p {

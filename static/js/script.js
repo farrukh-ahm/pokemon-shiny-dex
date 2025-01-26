@@ -115,3 +115,12 @@ for(let card of cards) {
         console.log("click")
     })
 }
+
+
+let formInput = document.querySelectorAll("form input")
+
+if(formInput){
+    formInput.forEach(input => {
+        input.setAttribute("placeholder", "")
+    })
+}

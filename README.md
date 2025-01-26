@@ -1,7 +1,7 @@
 # Shiny Dex
 <br><br>
 
-## ---- Currently Under Maintenance -------
+[Live Site Here](https://shiny-dex.up.railway.app/)
 
 The website is a place for Pokemon Shiny Hutner, where they can store the data of their hunts of [shiny pokemon](https://pokemondb.net/pokedex/shiny) like nickname, game hunted in, type of pokeball used, etc. The users can also view their "shiny dex" where all their data is listed.
 
