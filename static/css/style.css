@@ -275,7 +275,7 @@ dialog button {
     }
 }
 
-#page-icon a {
+#page-icon img {
     inline-size: 90%;
     block-size: 90%;
     position: absolute;
