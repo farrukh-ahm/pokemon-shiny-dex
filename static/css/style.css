@@ -275,7 +275,7 @@ dialog button {
     }
 }
 
-#page-icon > img{
+#page-icon a {
     inline-size: 90%;
     block-size: 90%;
     position: absolute;
@@ -299,13 +299,11 @@ dialog button {
     letter-spacing: .15em;
     font-family: var(--title);
     color: var(--text-color);
-    /* transition: all 0.25s ease-out; */
 }
 
 .nav > li a:hover{
     color: var(--header-color);
     border-bottom: 1px solid var(--header-color);
-    /* filter: drop-shadow(0 0 1px var(--header-color)); */
 }
 
 #nav-toggle{
@@ -443,7 +441,6 @@ dialog button {
 }
 
 .example:hover{
-    /* border-bottom: 1px solid var(--banner-color); */
     color: var(--banner-color);
 }
 
@@ -471,10 +468,7 @@ dialog button {
 }
 
 #selector {
-    /* perspective: 900px; */
     margin-block-end: 1rem;
-    /* perspective: var(--perspective); */
-    /* transform-style: preserve-3d; */
 }
 
 .perspective-div{
@@ -500,28 +494,16 @@ dialog button {
 
 }
 
-/* .card-holder:hover{
-    transform: rotateX(-10deg);
-} */
-
 
 .rotate {
     transform: rotateY(-180deg);
 }
 
-/* .rotate >.cards-front> h2{
-    text-shadow: 10px 10px grey;
-    transform: translateZ(50px);
-} */
 
 .cards-front{
 
     position: absolute;
     inset: 0;
-    /* inline-size: 17.5rem;
-    min-block-size: 22.5rem;
-    margin: auto; */
-    /* margin-block-end: 1rem; */
     border: 1px solid #fff;
     border-radius: 1em;
     transform: translateZ(10px);
@@ -531,14 +513,6 @@ dialog button {
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: overlay;
-    /* mix-blend-mode: color-dodge; */
-    /* backdrop-filter: blur(5px); */
-    /* background-color: var(--body-gradiet); */
-    /* background-color: plum; */
-    /* position: relative;
-    overflow-y: hidden;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); */
     transition: all 0.2s ease-in;
     --gap: 5rem;
 }
@@ -546,9 +520,7 @@ dialog button {
 .cards-front > img {
 
     max-block-size: 10em;
-    /* aspect-ratio: 1.5; */
     transform: translateZ(50px);
-    /* background-color: red; */
 
 }
 
@@ -559,7 +531,6 @@ dialog button {
     color: #fff;
     font-family: var(--header-font);
     transition: all .8s linear;
-    /* text-shadow: 2px 2px white; */
 
 }
 
@@ -571,7 +542,6 @@ dialog button {
     border-radius: 1em;
     transform-style: preserve-3d;
     background-image: var(--body-gradiet);
-    /* background-color: var(--body-gradiet); */
     transform: rotateY(180deg) translateZ(10px);
 
     display: flex;
@@ -579,7 +549,6 @@ dialog button {
     justify-content: center;
     align-items: center;
     line-height: 2em;
-    /* text-align: justify; */
 
 
 }
@@ -608,32 +577,15 @@ dialog button {
 
 }
 
-/* .cards:hover{
-    scale: 1.1;
-} */
-
-/* .cards:nth-child(even){
-    border-color: var(--card-even);
-} */
 
 .cards img{
     max-block-size: 7em;
     max-inline-size: 12em;
-    /* inline-size: 50%; */
-    /* aspect-ratio: 1; */
     position: absolute;
     top: 5%;
     left: 50%;
     transform: translateX(-50%);
-    /* filter: drop-shadow(0 0 5px var(--card-odd)); */
-    /* animation: poke-glow 2s alternate infinite; */
 }
-
-/* @keyframes poke-glow{
-    0%{filter: drop-shadow(0 0 5px var(--card-odd))}
-
-    100%{filter: drop-shadow(0 0 5px var(--card-even))}
-} */
 
 .name-tag{
     inline-size: 100%;
